@@ -29,7 +29,7 @@ export default function Confirm() {
         })
         .then(response => {
           // - redirecionamento nao funciona
-          toast.success('Confirmado!');
+          toast.success('Confirmado o agendamento!');
           history.push('/booking');
           return response;
         });
