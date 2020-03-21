@@ -6,10 +6,10 @@ import { signInSuccess, signFailure } from './actions';
 
 export function* signIn({ payload }) {
   try {
-    const { email, password } = payload;
+    const { email, password_hash } = payload;
     const response = yield call(api.post, 'sessions', {
       email,
-      password,
+      password_hash,
     });
 
     const { token, user } = response.data;
@@ -36,12 +36,13 @@ export function* signIn({ payload }) {
 
 export function* signUp({ payload }) {
   try {
-    const { name, email, password } = payload;
+    const { name, phone, email, password_hash } = payload;
 
     yield call(api.post, 'users', {
       name,
+      phone,
       email,
-      password,
+      password_hash,
       provider: false,
     });
 

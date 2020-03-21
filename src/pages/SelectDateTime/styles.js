@@ -6,6 +6,11 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
 
+  /* css file */
+  .disabled-link {
+    pointer-events: none;
+  }
+
   header {
     display: flex;
     align-items: center;
@@ -40,7 +45,7 @@ export const Time = styled.li`
 
   strong {
     display: block;
-    color: ${props => (props.avaiable ? '#999' : '#7159c1')};
+    color: ${props => (props.avaiable ? '#999' : '#056600')};
     font-size: 20px;
     font-weight: normal;
   }

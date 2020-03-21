@@ -11,15 +11,15 @@ const schema = Yup.object().shape({
   email: Yup.string()
     .email('Insira um email válido')
     .required('O Email é obrigatório'),
-  password: Yup.string().required('A Senha é obrigatória'),
+  password_hash: Yup.string().required('A Senha é obrigatória'),
 });
 
 export default function SignIn() {
   const dispatch = useDispatch();
   const loading = useSelector(state => state.auth.loading);
 
-  function handleSubmit({ email, password }) {
-    dispatch(signInRequest(email, password));
+  function handleSubmit({ email, password_hash }) {
+    dispatch(signInRequest(email, password_hash));
   }
 
   return (
@@ -27,11 +27,7 @@ export default function SignIn() {
       <img src={logo} alt="GoBarberWeb" />
       <Form schema={schema} onSubmit={handleSubmit}>
         <Input name="email" type="email" placeholder="Seu e-mail" />
-        <Input
-          name="password"
-          type="password"
-          placeholder="Sua senha secreta"
-        />
+        <Input name="password_hash" type="text" placeholder="Seu CPF" />
 
         <button type="submit">{loading ? 'Carregando...' : 'Acessar'}</button>
         <Link to="/register">Criar conta gratuíta</Link>

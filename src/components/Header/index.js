@@ -12,8 +12,8 @@ export default function Header() {
     <Container>
       <Content>
         <nav>
-          <img src={logo} alt="GoBarber" />
-          {profile.provider && <Link to="/dashboard">DASHBOARD</Link>}
+          <img src={logo} width="64px" height="64px" alt="GoBarber" />
+          {profile.provider && <Link to="/dashboard">AGENDA</Link>}
           {!profile.provider && <Link to="/booking">AGENDAMENTO</Link>}
         </nav>
 

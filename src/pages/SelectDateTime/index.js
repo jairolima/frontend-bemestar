@@ -51,7 +51,14 @@ export default function Dashboard() {
       </header>
       <ul>
         {hours.map(time => (
-          <Link to={`/confirm/${time.value}/${providerId}/${providerName}`}>
+          <Link
+            className={!time.avaiable ? 'disabled-link' : ''}
+            to={
+              time.avaiable
+                ? `/confirm/${time.value}/${providerId}/${providerName}`
+                : ``
+            }
+          >
             <Time data={hours} avaiable={!time.avaiable} key={time.time}>
               <strong>{time.time}</strong>
               <span>{time.avaiable ? 'Disponível' : 'Indisponível'}</span>

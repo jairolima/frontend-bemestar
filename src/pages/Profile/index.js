@@ -2,6 +2,7 @@ import React from 'react';
 import { Form, Input } from '@rocketseat/unform';
 import { useSelector, useDispatch } from 'react-redux';
 import { Container } from './styles';
+
 import AvatarInput from './AvatarInput';
 
 import { signOut } from '~/store/modules/auth/actions';
@@ -22,28 +23,18 @@ export default function Profile() {
   return (
     <Container>
       <Form initialData={profile} onSubmit={handleSubmit}>
-        <AvatarInput name="avatar_id" />
-
-        <Input name="name" placeholder="Nome completo" />
-        <Input name="email" placeholder="Seu endereço completo" />
+        {profile.provider && <AvatarInput name="avatar_id" />}
+        <Input name="name" placeholder="Nome completo" disabled />
+        <Input name="email" placeholder="Seu endereço completo" disabled />
+        <Input name="password_hash" placeholder="Seu CPF" disabled />
         <hr />
-        <Input
-          type="password"
-          name="oldPassword"
-          placeholder="Sua senha atual"
-        />
-        <Input type="password" name="password" placeholder="Nova senha" />
-        <Input
-          type="password"
-          name="confirmPassword"
-          placeholder="Confirmação de senha"
-        />
+        <Input name="phone" placeholder="Seu telefone" />
 
         <button type="submit">Atualizar perfil</button>
       </Form>
 
       <button type="submit" onClick={handleSignOut}>
-        Sair do Gobarber
+        Sair
       </button>
     </Container>
   );

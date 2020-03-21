@@ -40,7 +40,7 @@ export const Time = styled.li`
 
   strong {
     display: block;
-    color: ${props => (props.available ? '#999' : '#7159c1')};
+    color: ${props => (props.available ? '#999' : '#056600')};
     font-size: 20px;
     font-weight: normal;
   }
@@ -50,4 +50,16 @@ export const Time = styled.li`
     margin-top: 3px;
     color: ${props => (props.available ? '#999' : '#666')};
   }
+`;
+
+export const Title = styled.p`
+  font-size: 20px;
+  color: #fff;
+  font-weight: bold;
+  align-self: center;
+  margin-top: 30px;
+`;
+
+export const List = styled.li`
+  padding: 30;
 `;
