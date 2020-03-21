@@ -1,1 +1,1 @@
-# GoBarber - Mundancas na Aplicação Frontend com React
+# GoBarber - Mundanças na Aplicação Frontend com React
