@@ -2,10 +2,11 @@ import React, { useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import { formatRelative, parseISO } from 'date-fns';
 import pt from 'date-fns/locale/pt';
-import { toast } from 'react-toastify';
-import history from '~/services/history';
-import api from '~/services/api';
+import { useDispatch } from 'react-redux';
+import { Form, Input } from '@rocketseat/unform';
 import { Container } from './styles';
+
+import { updateProfileBooking } from '~/store/modules/user/actions';
 
 export default function Confirm() {
   const { providerId, time, providerName } = useParams();
@@ -15,27 +16,10 @@ export default function Confirm() {
     [time]
   );
 
-  // - redirecionamento funcionando
-  function redirectWorking() {
-    history.push('/booking');
-  }
+  const dispatch = useDispatch();
 
-  async function handleAddAppointment() {
-    try {
-      await api
-        .post('appointments', {
-          provider_id: providerId,
-          date: time,
-        })
-        .then(response => {
-          // - redirecionamento nao funciona
-          toast.success('Confirmado o agendamento!');
-          history.push('/booking');
-          return response;
-        });
-    } catch (err) {
-      toast.error('Horario invalido!');
-    }
+  function handleSubmit({ date, provider_id }) {
+    dispatch(updateProfileBooking(date, provider_id));
   }
 
   return (
@@ -46,13 +30,11 @@ export default function Confirm() {
           profissional {providerId}?
         </strong>
 
-        <form onSubmit={handleAddAppointment}>
+        <Form onSubmit={handleSubmit}>
+          <Input name="date" type="hidden" value={time} />
+          <Input name="provider_id" type="hidden" value={providerId} />
           <button type="submit">Sim</button>
-        </form>
-
-        <form onSubmit={redirectWorking}>
-          <button type="submit">Redirecionar</button>
-        </form>
+        </Form>
       </div>
     </Container>
   );

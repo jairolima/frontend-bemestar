@@ -28,6 +28,11 @@ export default function Profile() {
         <Input name="email" placeholder="Seu endereço completo" disabled />
         <Input name="password_hash" placeholder="Seu CPF" disabled />
         <hr />
+        {/* {profile.provider && (
+          <Input name="specialty" placeholder="Sua especialidade" />
+        )}
+        {profile.provider && <Input name="crm" placeholder="Seu CRM" />} */}
+
         <Input name="phone" placeholder="Seu telefone" />
 
         <button type="submit">Atualizar perfil</button>

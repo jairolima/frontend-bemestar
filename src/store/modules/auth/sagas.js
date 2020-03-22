@@ -45,8 +45,27 @@ export function* signUp({ payload }) {
       password_hash,
       provider: false,
     });
+    toast.success('Conta criada com sucesso!');
+    const response = yield call(api.post, 'sessions', {
+      email,
+      password_hash,
+    });
+    const { token, user } = response.data;
 
-    history.push('/');
+    // if (!user.provider) {
+    //   toast.error('usuario nao é prestador de servico');
+    //   return;
+    // }
+
+    api.defaults.headers.Authorization = `Baerer ${token}`;
+
+    yield put(signInSuccess(token, user));
+
+    if (user.provider) {
+      history.push('/Dashboard');
+    } else {
+      history.push('/Booking');
+    }
   } catch (err) {
     toast.error('Falha no cadastro verifique seus dados!');
     yield put(signFailure());

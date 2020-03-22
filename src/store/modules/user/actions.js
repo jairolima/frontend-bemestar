@@ -12,6 +12,13 @@ export function updateProfileSuccess(profile) {
   };
 }
 
+export function updateProfileBooking(date, provider_id) {
+  return {
+    type: '@user/UPDATE_PROFILE_BOOKING',
+    payload: { date, provider_id },
+  };
+}
+
 export function updateProfilefailure() {
   return {
     type: '@user/UPDATE_PROFILE_FAILURE',

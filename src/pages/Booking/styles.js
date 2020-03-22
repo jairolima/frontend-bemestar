@@ -63,3 +63,12 @@ export const Title = styled.p`
 export const List = styled.li`
   padding: 30;
 `;
+
+export const Appointment = styled.li`
+  background: #fff;
+  padding: 20px;
+  min-width: 200px;
+  flex: 1;
+  align-items: center;
+  margin: 0 0 10px 0;
+`;
