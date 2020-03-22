@@ -1,7 +1,7 @@
 import axios from 'axios';
-
+// producao
 const api = axios.create({
-  baseURL: 'http://64.227.31.177',
+  baseURL: 'https://www.policlinicabemestar.com',
 });
 
 export default api;
