@@ -5,6 +5,7 @@ import pt from 'date-fns/locale/pt';
 import { useDispatch } from 'react-redux';
 import { Form, Input } from '@rocketseat/unform';
 import { Container } from './styles';
+import history from '~/services/history';
 
 import { updateProfileBooking } from '~/store/modules/user/actions';
 
@@ -22,18 +23,25 @@ export default function Confirm() {
     dispatch(updateProfileBooking(date, provider_id));
   }
 
+  function redirectSubmit() {
+    history.push('/booking');
+  }
+
   return (
     <Container>
       <div>
         <strong>
           Você deseja agendar {providerName} para {dateFormatted}, com o
-          profissional {providerId}?
+          profissional de ID: {providerId}?
         </strong>
 
         <Form onSubmit={handleSubmit}>
           <Input name="date" type="hidden" value={time} />
           <Input name="provider_id" type="hidden" value={providerId} />
           <button type="submit">Sim</button>
+        </Form>
+        <Form onSubmit={redirectSubmit}>
+          <button type="submit">Não</button>
         </Form>
       </div>
     </Container>
