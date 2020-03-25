@@ -34,7 +34,6 @@ function Worker() {
                   alt="Thiago Marinho"
                 />
                 <Name>{provider.name}</Name>
-                <Name>{provider.id}</Name>
               </Provider>
             </Link>
           ))}

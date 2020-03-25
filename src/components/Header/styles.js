@@ -48,6 +48,10 @@ export const Profile = styled.div`
     strong {
       display: block;
       color: #333;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 12ch;
     }
 
     a {

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { darken } from 'polished';
 
 export const Container = styled.div`
   max-width: 600px;
@@ -31,40 +32,26 @@ export const Container = styled.div`
   }
 `;
 
-export const Time = styled.li`
-  padding: 20px;
-  border-radius: 4px;
-  background: #fff;
+export const Del = styled.div`
+  button {
+    margin: 0px 0 0 10px;
+    padding: 0 5px;
+    height: 44px;
+    background: #f64c75;
+    font-weight: bold;
+    color: #fff;
+    border: 0;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: background 0.2s;
 
-  opacity: ${props => (props.past ? 0.6 : 1)};
-
-  strong {
-    display: block;
-    color: ${props => (props.available ? '#999' : '#056600')};
-    font-size: 20px;
-    font-weight: normal;
-  }
-
-  span {
-    display: block;
-    margin-top: 3px;
-    color: ${props => (props.available ? '#999' : '#666')};
+    &:hover {
+      background: ${darken(0.03, '#f64c75')};
+    }
   }
 `;
 
-export const Title = styled.p`
-  font-size: 20px;
-  color: #fff;
-  font-weight: bold;
-  align-self: center;
-  margin-top: 30px;
-`;
-
-export const List = styled.li`
-  padding: 30;
-`;
-
-export const Appointment = styled.li`
+export const Appointment = styled.div`
   background: #fff;
   padding: 20px;
   min-width: 200px;
