@@ -18,10 +18,10 @@ export default function Routes() {
 
       <Route path="/list" exact component={List} />
 
+      <Route path="/booking" exact component={Booking} isPrivate />
       <Route path="/dashboard" component={Dashboard} isPrivate />
       <Route path="/profile" component={Profile} isPrivate />
 
-      <Route path="/booking" exact component={Booking} isPrivate />
       <Route
         path="/confirm/:time/:providerId/:providerName"
         component={Confirm}
