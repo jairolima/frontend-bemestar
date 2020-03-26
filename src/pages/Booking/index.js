@@ -39,22 +39,23 @@ export default function Booking() {
     <Container>
       <div>
         {appointments.map(appointment => (
-          <Appointment>
-            <Del>
-              <Form onSubmit={deleteSubmit}>
-                <Input
-                  type="hidden"
-                  name="delappointment"
-                  value={appointment.id}
-                />
-                <strong>Agendado {appointment.provider.name} para</strong>
-
-                <strong> {appointment.date}</strong>
-
-                <button type="submit">Desmarcar</button>
-              </Form>
-            </Del>
-          </Appointment>
+          <Form onSubmit={deleteSubmit}>
+            {!appointment.past && (
+              <strong>
+                <Appointment>
+                  <Del>
+                    <Input
+                      type="hidden"
+                      name="delappointment"
+                      value={appointment.id}
+                    />
+                    Agendado {appointment.provider.name} para {appointment.date}
+                    <button type="submit">Desmarcar</button>
+                  </Del>
+                </Appointment>
+              </strong>
+            )}
+          </Form>
         ))}
 
         <Worker />
