@@ -25,7 +25,7 @@ export default function Profile() {
       <Form initialData={profile} onSubmit={handleSubmit}>
         {profile.provider && <AvatarInput name="avatar_id" />}
         <Input name="name" placeholder="Nome completo" disabled />
-        <Input name="email" placeholder="Seu endereço completo" disabled />
+        <Input name="email" placeholder="Seu email" disabled />
         <Input name="password_hash" placeholder="Seu CPF" disabled />
         <hr />
         {/* {profile.provider && (
