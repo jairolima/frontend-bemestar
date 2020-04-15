@@ -13,12 +13,9 @@ const schema = Yup.object().shape({
   password_hash: Yup.string().required('O CPF é obrigatório'),
   phone: Yup.string()
     .required('O telefone é obrigatorio')
-    .matches(/^[0-9]+$/, 'Telefone deve ter apenas numeros')
     .min(8, 'Telefone deve ter pelo menos 8 digitos')
-    .max(12, 'Telefone deve ter no maxmio 12 digitos'),
-  email: Yup.string()
-    .email('Insira um email válido')
-    .required('O Email é obrigatório'),
+    .max(16, 'Telefone deve ter no maximo 12 digitos'),
+  email: Yup.string().email('Insira um email válido'),
 });
 
 export default function SignUp() {
@@ -32,20 +29,13 @@ export default function SignUp() {
     <>
       <img src={logo} alt="GoBarberWeb" />
       <Form schema={schema} onSubmit={handleSubmit}>
-        <Input
-          mask="(99)99999-9999"
-          name="phone"
-          type="number"
-          placeholder="Seu telefone"
-          tag={InputMask}
-        />
+        <InputMask mask="(99)99999-9999">
+          {() => <Input name="phone" placeholder="Seu telefone" />}
+        </InputMask>
         <Input name="name" type="text" placeholder="Nome completo" />
-        <Input
-          mask="999.999.999-99"
-          name="password_hash"
-          type="number"
-          placeholder="Seu CPF"
-        />
+        <InputMask mask="999.999.999-99">
+          {() => <Input name="password_hash" placeholder="000.000.000-00" />}
+        </InputMask>
         <Input name="email" type="email" placeholder="Seu e-mail" />
         <button type="submit">Criar conta</button>
         <Link to="/">Já tenho login</Link>

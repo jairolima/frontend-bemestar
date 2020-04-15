@@ -6,9 +6,9 @@ import { signInSuccess, signFailure } from './actions';
 
 export function* signIn({ payload }) {
   try {
-    const { email, password_hash } = payload;
+    const { phone, password_hash } = payload;
     const response = yield call(api.post, 'sessions', {
-      email,
+      phone,
       password_hash,
     });
 
@@ -29,7 +29,7 @@ export function* signIn({ payload }) {
       history.push('/Booking');
     }
   } catch (err) {
-    toast.error('Falha na autenticação, verifique seu email/senha');
+    toast.error('Falha na autenticação, verifique seu telefone/senha');
     yield put(signFailure());
   }
 }
@@ -47,7 +47,7 @@ export function* signUp({ payload }) {
     });
     toast.success('Conta criada com sucesso!');
     const response = yield call(api.post, 'sessions', {
-      email,
+      phone,
       password_hash,
     });
     const { token, user } = response.data;
