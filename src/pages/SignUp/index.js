@@ -30,11 +30,11 @@ export default function SignUp() {
       <img src={logo} alt="GoBarberWeb" />
       <Form schema={schema} onSubmit={handleSubmit}>
         <InputMask mask="(99)99999-9999">
-          {() => <Input name="phone" placeholder="Seu telefone" />}
+          {() => <Input name="phone" placeholder="Seu telefone*" />}
         </InputMask>
-        <Input name="name" type="text" placeholder="Nome completo" />
+        <Input name="name" type="text" placeholder="Nome completo*" />
         <InputMask mask="999.999.999-99">
-          {() => <Input name="password_hash" placeholder="000.000.000-00" />}
+          {() => <Input name="password_hash" placeholder="000.000.000-00*" />}
         </InputMask>
         <Input name="email" type="email" placeholder="Seu e-mail" />
         <button type="submit">Criar conta</button>
