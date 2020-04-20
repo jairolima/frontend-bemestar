@@ -23,7 +23,9 @@ export function* signIn({ payload }) {
 
     yield put(signInSuccess(token, user));
 
-    if (user.provider) {
+    if (user.id === 4) {
+      history.push('/Adm');
+    } else if (user.provider) {
       history.push('/Dashboard');
     } else {
       history.push('/Booking');

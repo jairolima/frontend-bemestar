@@ -6,7 +6,7 @@ import { useParams, Link } from 'react-router-dom';
 import api from '~/services/api';
 import { Container, Time } from './styles';
 
-export default function Dashboard() {
+export default function SelectDateTime() {
   const [date, setDate] = useState(new Date());
   const [hours, setHours] = useState([]);
 
@@ -62,7 +62,6 @@ export default function Dashboard() {
             <Time data={hours} avaiable={!time.avaiable} key={time.time}>
               <strong>{time.time}</strong>
               <span>{time.avaiable ? 'Disponível' : 'Indisponível'}</span>
-              {/* <p>{time.value}</p> */}
             </Time>
           </Link>
         ))}

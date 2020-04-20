@@ -1,6 +1,7 @@
+/* eslint-disable eqeqeq */
 import React, { useState, useEffect } from 'react';
 import { Form, Input } from '@rocketseat/unform';
-
+import { useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 
 import Worker from '~/components/Worker';
@@ -11,6 +12,7 @@ import { Container, Appointment, Del } from './styles';
 
 export default function Booking() {
   const [appointments, setAppointments] = useState([]);
+  const profile = useSelector(state => state.user.profile);
 
   useEffect(() => {
     async function loadAppointments() {
@@ -35,8 +37,16 @@ export default function Booking() {
     }
   }
 
+  function onload() {
+    if (profile.id == 17) {
+      history.push('/adm');
+    } else if (profile.provider) {
+      history.push('/dashboard');
+    }
+  }
+
   return (
-    <Container>
+    <Container onLoad={onload}>
       <div>
         {appointments.map(appointment => (
           <Form onSubmit={deleteSubmit}>

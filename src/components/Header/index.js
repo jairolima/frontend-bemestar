@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -13,8 +14,11 @@ export default function Header() {
       <Content>
         <nav>
           <img src={logo} width="64px" height="64px" alt="GoBarber" />
+          {profile.id == 17 && <Link to="/adm">SYS BEM ESTAR 1.0.0</Link>}
+          {profile.provider == false && profile.id != 17 && (
+            <Link to="/booking">AGENDAMENTO</Link>
+          )}
           {profile.provider && <Link to="/dashboard">AGENDA</Link>}
-          {!profile.provider && <Link to="/booking">AGENDAMENTO</Link>}
         </nav>
 
         <aside>
@@ -30,7 +34,7 @@ export default function Header() {
                   (profile.avatar && profile.avatar.url) ||
                   `https://api.adorable.io/avatars/50/abott@adorable.png`
                 }
-                alt="Thiago Marinho"
+                alt="avatar"
               />
             )}
           </Profile>
