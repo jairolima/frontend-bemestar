@@ -50,7 +50,7 @@ export default function Adm() {
         </div>
         <div>
           <strong>
-            {quantity.numappointments}
+            {quantity.numusers}
             <span>Clientes</span>
           </strong>
         </div>
