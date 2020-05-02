@@ -6,6 +6,7 @@ export const Container = styled.div`
   margin: 50px auto;
   display: flex;
   flex-direction: column;
+  height: 100%;
 
   header {
     display: flex;
@@ -26,7 +27,7 @@ export const Container = styled.div`
 
   ul {
     display: grid;
-    grid-template-columns: repeat(5, 2fr);
+    grid-template-columns: repeat(2, 2fr);
     grid-gap: 15px;
     margin-top: 30px;
   }
