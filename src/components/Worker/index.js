@@ -31,7 +31,7 @@ function Worker() {
                     (provider.avatar && provider.avatar.url) ||
                     `https://api.adorable.io/avatars/50/abott@adorable.png`
                   }
-                  alt="Thiago Marinho"
+                  alt="Avatar"
                 />
                 <Name>{provider.name}</Name>
               </Provider>

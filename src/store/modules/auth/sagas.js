@@ -23,7 +23,7 @@ export function* signIn({ payload }) {
 
     yield put(signInSuccess(token, user));
 
-    if (user.id === 4) {
+    if (user.id === 17) {
       history.push('/Adm');
     } else if (user.provider) {
       history.push('/Dashboard');

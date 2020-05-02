@@ -31,17 +31,20 @@ export default function Confirm() {
     <Container>
       <div>
         <strong>
-          Você deseja agendar {providerName} para {dateFormatted}, com o
-          profissional de ID: {providerId}?
+          Você deseja agendar {providerName} para {dateFormatted}?
         </strong>
 
         <Form onSubmit={handleSubmit}>
           <Input name="date" type="hidden" value={time} />
           <Input name="provider_id" type="hidden" value={providerId} />
           <button type="submit">Sim</button>
-        </Form>
-        <Form onSubmit={redirectSubmit}>
-          <button type="submit">Não</button>
+          <button
+            onClick={redirectSubmit}
+            style={{ backgroundColor: '#fb6f91' }}
+            type="submit"
+          >
+            Não
+          </button>
         </Form>
       </div>
     </Container>
