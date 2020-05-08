@@ -152,7 +152,7 @@ export default function SelectDateTime() {
         </strong>
       )}
 
-      {providerId == 4 && weekday != 0 && weekday != 6 ? (
+      {providerId == 4 && weekday != 0 && weekday != 6 && weekday != 2 ? (
         <ul>
           {hours.map(time => (
             <Link
@@ -180,7 +180,7 @@ export default function SelectDateTime() {
         </strong>
       )}
 
-      {providerId == 5 && weekday != 0 && weekday != 6 ? (
+      {providerId == 5 && weekday != 0 && weekday != 6 && weekday != 2 ? (
         <ul>
           {hours.map(time => (
             <Link
@@ -211,7 +211,7 @@ export default function SelectDateTime() {
       {providerId == 13 &&
       weekday != 0 &&
       weekday != 1 &&
-      weekday != 3 &&
+      weekday != 2 &&
       weekday != 4 &&
       weekday != 5 &&
       weekday != 6 ? (
@@ -245,7 +245,7 @@ export default function SelectDateTime() {
       {providerId == 10 &&
       weekday != 0 &&
       weekday != 1 &&
-      weekday != 3 &&
+      weekday != 2 &&
       weekday != 4 &&
       weekday != 5 &&
       weekday != 6 ? (
@@ -279,7 +279,7 @@ export default function SelectDateTime() {
       {providerId == 9 &&
       weekday != 0 &&
       weekday != 1 &&
-      weekday != 3 &&
+      weekday != 2 &&
       weekday != 4 &&
       weekday != 6 ? (
         <ul>
