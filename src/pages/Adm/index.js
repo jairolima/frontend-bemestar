@@ -68,7 +68,7 @@ export default function Adm() {
       </Appointment>
 
       <div style={{ color: '#fff', marginTop: '40px' }}>
-        <strong>Notas atualizacao (1.0.6):</strong>
+        <strong>Notas atualizacao (1.0.7):</strong>
         <ul>
           <li>- Adicionado dia da semana ao listar horarios</li>
           <li>
