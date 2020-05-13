@@ -280,7 +280,7 @@ export default function SelectDateTime() {
       weekday != 0 &&
       weekday != 1 &&
       weekday != 3 &&
-      weekday != 5 &&
+      weekday != 4 &&
       weekday != 6 ? (
         <ul>
           {hours.map(time => (
