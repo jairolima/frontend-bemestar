@@ -375,6 +375,39 @@ export default function SelectDateTime() {
           )}
         </strong>
       )}
+      {providerId == 98 &&
+      weekday != 0 &&
+      weekday != 1 &&
+      weekday != 3 &&
+      weekday != 4 &&
+      weekday != 5 &&
+      weekday != 6 ? (
+        <ul>
+          {hours.map(time => (
+            <Link
+              className={!time.avaiable ? 'disabled-link' : ''}
+              to={
+                time.avaiable
+                  ? `/confirm/${time.value}/${providerId}/${providerName}`
+                  : ``
+              }
+            >
+              <Time data={hours} avaiable={!time.avaiable} key={time.time}>
+                <strong>{time.time}</strong>
+                <span>{time.avaiable ? 'Disponível' : 'Indisponível'}</span>
+              </Time>
+            </Link>
+          ))}
+        </ul>
+      ) : (
+        <strong>
+          {providerId == 98 ? (
+            <h4>Nao existem horários disponíveis para a data pesquisada</h4>
+          ) : (
+            ''
+          )}
+        </strong>
+      )}
     </Container>
   );
 }
