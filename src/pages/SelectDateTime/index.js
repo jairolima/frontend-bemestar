@@ -347,6 +347,7 @@ export default function SelectDateTime() {
       weekday != 0 &&
       weekday != 1 &&
       weekday != 2 &&
+      weekday != 3 &&
       weekday != 4 &&
       weekday != 6 ? (
         <ul>
