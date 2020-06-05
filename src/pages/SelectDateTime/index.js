@@ -279,7 +279,6 @@ export default function SelectDateTime() {
       {providerId == 9 &&
       weekday != 0 &&
       weekday != 1 &&
-      weekday != 3 &&
       weekday != 4 &&
       weekday != 6 ? (
         <ul>
