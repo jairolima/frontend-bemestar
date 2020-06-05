@@ -24,7 +24,7 @@ export default function Profile() {
     <Container>
       <Form initialData={profile} onSubmit={handleSubmit}>
         {profile.provider && <AvatarInput name="avatar_id" />}
-        <Input name="name" placeholder="Nome completo" disabled />
+
         <Input name="email" placeholder="Seu email" disabled />
         <Input name="password_hash" placeholder="Seu CPF" disabled />
         <hr />
@@ -32,7 +32,7 @@ export default function Profile() {
           <Input name="specialty" placeholder="Sua especialidade" />
         )}
         {profile.provider && <Input name="crm" placeholder="Seu CRM" />} */}
-
+        <Input name="name" placeholder="Nome completo" />
         <Input name="phone" placeholder="Seu telefone" />
 
         <button type="submit">Atualizar perfil</button>
