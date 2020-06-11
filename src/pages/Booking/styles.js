@@ -35,9 +35,10 @@ export const Container = styled.div`
 
 export const Del = styled.div`
   button {
-    margin: 0px 0 0 10px;
-    padding: 0 5px;
+    margin: 0px 0px 0px 40px;
+    padding: 0 10px;
     height: 44px;
+    flex-direction: flex-end;
     background: #f64c75;
     font-weight: bold;
     color: #fff;
@@ -53,10 +54,16 @@ export const Del = styled.div`
 `;
 
 export const Appointment = styled.div`
-  background: #fff;
+  background: linear-gradient(-90deg, #056600, #08a200);
+  color: #fff;
+  border-radius: 8px;
   padding: 20px;
   min-width: 200px;
-  flex: 1;
+  display: flex;
+  justify-content: center;
   align-items: center;
   margin: 0 0 10px 0;
+  -webkit-box-shadow: 0px 0px 25px 0px rgba(191, 191, 191, 1);
+  -moz-box-shadow: 0px 0px 25px 0px rgba(191, 191, 191, 1);
+  box-shadow: 0px 0px 25px 0px rgba(191, 191, 191, 1);
 `;

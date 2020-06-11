@@ -22,3 +22,13 @@ export const Container = styled.div`
     }
   }
 `;
+
+export const Margin = styled.div`
+  height: 90px;
+`;
+
+export const Background = styled.div`
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(-90deg, #056600, #08a200);
+`;

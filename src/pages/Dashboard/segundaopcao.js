@@ -10,12 +10,11 @@ import {
   parseISO,
 } from 'date-fns';
 import pt from 'date-fns/locale/pt';
-import { utcToZonedTime } from 'date-fns-tz';
 import { useSelector } from 'react-redux';
+import { utcToZonedTime } from 'date-fns-tz';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
-
 import api from '~/services/api';
-import { Container, Time, Margin, Background } from './styles';
+import { Container, Time, Background, Margin } from './styles';
 
 export default function Dashboard() {
   const doctor = useSelector(state => state.user.doctor);
@@ -26,6 +25,47 @@ export default function Dashboard() {
     () => format(date, "d 'de' MMMM", { locale: pt }),
     [date]
   );
+
+  const range = useMemo(() => {
+    const { mon, tue, wed, thu, fri, sat, sun } = doctor;
+
+    const weekday = date.getDay();
+
+    // function that returns the day to search in find doctor
+    function myWeekDay() {
+      switch (weekday) {
+        case 0:
+          return sun;
+        case 1:
+          return mon;
+        case 2:
+          return tue;
+        case 3:
+          return wed;
+        case 4:
+          return thu;
+        case 5:
+          return fri;
+        case 6:
+          return sat;
+        default:
+          break;
+      }
+      return null;
+    }
+
+    function checkEmpty() {
+      const emptyenum = '000:000';
+      if (myWeekDay() === '') {
+        return emptyenum;
+      }
+      return myWeekDay();
+    }
+
+    // converting string from doctor persist to an array
+    return Array.from(checkEmpty().split(','));
+  }, [date, doctor]);
+
   useEffect(() => {
     async function loadSchedule() {
       const response = await api.get('schedule', {
@@ -34,45 +74,7 @@ export default function Dashboard() {
 
       const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
-      const { mon, tue, wed, thu, fri, sat, sun } = doctor;
-
-      const weekday = date.getDay();
-
-      // function that returns the day to search in find doctor
-      function myweekday() {
-        switch (weekday) {
-          case 0:
-            return sun;
-          case 1:
-            return mon;
-          case 2:
-            return tue;
-          case 3:
-            return wed;
-          case 4:
-            return thu;
-          case 5:
-            return fri;
-          case 6:
-            return sat;
-          default:
-            break;
-        }
-        return null;
-      }
-
-      function checkempty() {
-        const emptyenum = '000:000';
-        if (myweekday() === '') {
-          return emptyenum;
-        }
-        return myweekday();
-      }
-
-      // converting string from doctor persist to an array
-      const array = Array.from(checkempty().split(','));
-
-      const data = array.map(time => {
+      const data = range.map(time => {
         const [hour, minute] = time.split(':');
         const checkDate = setSeconds(
           setMinutes(setHours(date, hour), minute),
@@ -93,7 +95,7 @@ export default function Dashboard() {
     }
 
     loadSchedule();
-  }, [date, doctor]);
+  }, [date, range]);
 
   function handlePrevDay() {
     setDate(subDays(date, 1));
@@ -106,18 +108,17 @@ export default function Dashboard() {
   return (
     <Background>
       <Margin />
-      <p>{JSON.stringify(date)}</p>
       <Container>
+        <p>{doctor.mon}</p>
         <header>
           <button type="button">
-            <MdChevronLeft size={26} color="FFF" onClick={handlePrevDay} />
+            <MdChevronLeft size={36} color="FFF" onClick={handlePrevDay} />
           </button>
           <strong>{dateFormatted}</strong>
           <button type="button">
-            <MdChevronRight size={26} color="FFF" onClick={handleNextDay} />
+            <MdChevronRight size={36} color="FFF" onClick={handleNextDay} />
           </button>
         </header>
-        <p>{JSON.stringify(schedule)}</p>
 
         <ul>
           {schedule.map(time => (
@@ -127,10 +128,7 @@ export default function Dashboard() {
               available={!time.appointment}
             >
               {time.time === '000:000h' ? (
-                <>
-                  <strong>Atendimento</strong>
-                  <span>Indisponivel</span>
-                </>
+                <strong>vazio</strong>
               ) : (
                 <>
                   <strong>{time.time}</strong>

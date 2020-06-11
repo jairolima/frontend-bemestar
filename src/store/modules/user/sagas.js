@@ -1,28 +1,23 @@
 import { takeLatest, call, put, all } from 'redux-saga/effects';
 import { toast } from 'react-toastify';
 import api from '~/services/api';
-import { updateProfileSuccess, updateProfilefailure } from './actions';
+import {
+  updateProfileSuccess,
+  updateProfilefailure,
+  updateDoctorProfileSuccess,
+  updateDoctorProfilefailure,
+} from './actions';
 import history from '~/services/history';
 
 export function* updateProfile({ payload }) {
   try {
-    const {
-      name,
-      email,
-      password_hash,
-      phone,
-      specialty,
-      crm,
-      avatar_id,
-    } = payload.data;
+    const { name, email, password_hash, phone, avatar_id } = payload.data;
 
     const profile = {
       name,
       email,
       password_hash,
       phone,
-      specialty,
-      crm,
       avatar_id,
     };
 
@@ -35,6 +30,43 @@ export function* updateProfile({ payload }) {
     console.tron.log(error);
     toast.error('Erro ao atualizar Perfil');
     yield put(updateProfilefailure());
+  }
+}
+
+export function* updateDoctorProfile({ payload }) {
+  try {
+    const {
+      specialty,
+      crm,
+      user_id,
+      mon,
+      tue,
+      wed,
+      thu,
+      fri,
+      sat,
+      sun,
+    } = payload.data;
+
+    const doctor = {
+      specialty,
+      crm,
+      user_id,
+      mon,
+      tue,
+      wed,
+      thu,
+      fri,
+      sat,
+      sun,
+    };
+    const response = yield call(api.put, 'doctors', doctor);
+    toast.success('Perfil de medico atualizado com sucesso!');
+    yield put(updateDoctorProfileSuccess(response.data));
+  } catch (error) {
+    console.tron.log(error);
+    toast.error('Erro ao atualizar Perfil de Medico');
+    yield put(updateDoctorProfilefailure());
   }
 }
 
@@ -55,5 +87,6 @@ export function* updateProfileBooking({ payload }) {
 
 export default all([
   takeLatest('@user/UPDATE_PROFILE_REQUEST', updateProfile),
+  takeLatest('@user/UPDATE_DOCTOR_PROFILE_REQUEST', updateDoctorProfile),
   takeLatest('@user/UPDATE_PROFILE_BOOKING', updateProfileBooking),
 ]);

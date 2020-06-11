@@ -24,3 +24,23 @@ export function updateProfilefailure() {
     type: '@user/UPDATE_PROFILE_FAILURE',
   };
 }
+
+export function updateDoctorProfileRequest(data) {
+  return {
+    type: '@user/UPDATE_DOCTOR_PROFILE_REQUEST',
+    payload: { data },
+  };
+}
+
+export function updateDoctorProfileSuccess(doctor) {
+  return {
+    type: '@user/UPDATE_DOCTOR_PROFILE_SUCCESS',
+    payload: { doctor },
+  };
+}
+
+export function updateDoctorProfilefailure() {
+  return {
+    type: '@user/UPDATE_DOCTOR_PROFILE_FAILURE',
+  };
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, Input } from '@rocketseat/unform';
 import { useSelector, useDispatch } from 'react-redux';
-import { Container } from './styles';
+import { Container, Background, Margin } from './styles';
 
 import AvatarInput from './AvatarInput';
 
@@ -21,26 +21,29 @@ export default function Profile() {
   }
 
   return (
-    <Container>
-      <Form initialData={profile} onSubmit={handleSubmit}>
-        {profile.provider && <AvatarInput name="avatar_id" />}
+    <Background>
+      <Margin />
+      <Container>
+        <Form initialData={profile} onSubmit={handleSubmit}>
+          {profile.provider && <AvatarInput name="avatar_id" />}
 
-        <Input name="email" placeholder="Seu email" disabled />
-        <Input name="password_hash" placeholder="Seu CPF" disabled />
-        <hr />
-        {/* {profile.provider && (
+          <Input name="email" placeholder="Seu email" disabled />
+          <Input name="password_hash" placeholder="Seu CPF" disabled />
+          <hr />
+          {/* {profile.provider && (
           <Input name="specialty" placeholder="Sua especialidade" />
         )}
         {profile.provider && <Input name="crm" placeholder="Seu CRM" />} */}
-        <Input name="name" placeholder="Nome completo" />
-        <Input name="phone" placeholder="Seu telefone" />
+          <Input name="name" placeholder="Nome completo" />
+          <Input name="phone" placeholder="Seu telefone" />
 
-        <button type="submit">Atualizar perfil</button>
-      </Form>
+          <button type="submit">Atualizar perfil</button>
+        </Form>
 
-      <button type="submit" onClick={handleSignOut}>
-        Sair
-      </button>
-    </Container>
+        <button type="submit" onClick={handleSignOut}>
+          Sair
+        </button>
+      </Container>
+    </Background>
   );
 }

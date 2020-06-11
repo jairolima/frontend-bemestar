@@ -47,29 +47,32 @@ export default function Booking() {
 
   return (
     <Container onLoad={onload}>
-      <div>
-        {appointments.map(appointment => (
+      {appointments.map(appointment => (
+        <>
           <Form onSubmit={deleteSubmit}>
             {!appointment.past && (
-              <strong>
-                <Appointment>
+              <Appointment>
+                <Input
+                  type="hidden"
+                  name="delappointment"
+                  value={appointment.id}
+                  style={{ alignSelf: 'center' }}
+                />
+                <strong>
+                  Agendado {appointment.provider.name} para {appointment.date}
+                </strong>
+                <div style={{ alignSelf: 'flex-end' }}>
                   <Del>
-                    <Input
-                      type="hidden"
-                      name="delappointment"
-                      value={appointment.id}
-                    />
-                    Agendado {appointment.provider.name} para {appointment.date}
                     <button type="submit">Desmarcar</button>
                   </Del>
-                </Appointment>
-              </strong>
+                </div>
+              </Appointment>
             )}
           </Form>
-        ))}
+        </>
+      ))}
 
-        <Worker />
-      </div>
+      <Worker />
     </Container>
   );
 }

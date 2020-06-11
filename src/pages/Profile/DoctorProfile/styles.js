@@ -3,12 +3,12 @@ import { darken } from 'polished';
 
 export const Container = styled.div`
   max-width: 600px;
-  margin: 100px auto;
+  margin: 50px auto;
 
   form {
     display: flex;
     flex-direction: column;
-    margin-top: 30px;
+    margin-top: 0px;
 
     input {
       background: rgba(0, 0, 0, 0.1);
@@ -81,19 +81,14 @@ export const Container = styled.div`
       background: ${darken(0.08, '#f64c75')};
     }
   }
-
-  strong {
-    color: #fff;
-    font-size: 24px;
-    margin: 0 15px;
-  }
 `;
 
 export const Margin = styled.div`
-  height: 90px;
+  height: 40px;
 `;
 
 export const Background = styled.div`
+  margin: 0;
   height: 100%;
   width: 100%;
   background: linear-gradient(-90deg, #056600, #08a200);

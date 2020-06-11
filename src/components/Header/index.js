@@ -1,6 +1,7 @@
 /* eslint-disable eqeqeq */
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { MdSettings } from 'react-icons/md';
 import { useSelector } from 'react-redux';
 import logo from '~/assets/logo-purple.svg';
 import { Container, Content, Profile } from './styles';
@@ -13,7 +14,7 @@ export default function Header() {
     <Container>
       <Content>
         <nav>
-          <img src={logo} width="64px" height="64px" alt="GoBarber" />
+          <img src={logo} width="64px" height="64px" alt="BemEstar" />
           {profile.id == 17 && <Link to="/adm">SYS BEM ESTAR 1.0.7</Link>}
           {profile.provider == false && profile.id != 17 && (
             <Link to="/booking">AGENDAMENTO</Link>
@@ -23,6 +24,11 @@ export default function Header() {
 
         <aside>
           {profile.provider && <Notifications />}
+          {profile.provider && (
+            <Link to="/doctor" style={{ paddingLeft: 20 }}>
+              <MdSettings color="#056600" size={20} />
+            </Link>
+          )}
           <Profile>
             <div>
               <strong>{profile.name}</strong>

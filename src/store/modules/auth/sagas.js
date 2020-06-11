@@ -12,7 +12,7 @@ export function* signIn({ payload }) {
       password_hash,
     });
 
-    const { token, user } = response.data;
+    const { token, user, doctor } = response.data;
 
     // if (!user.provider) {
     //   toast.error('usuario nao é prestador de servico');
@@ -21,7 +21,7 @@ export function* signIn({ payload }) {
 
     api.defaults.headers.Authorization = `Baerer ${token}`;
 
-    yield put(signInSuccess(token, user));
+    yield put(signInSuccess(token, user, doctor));
 
     if (user.id === 17) {
       history.push('/Adm');

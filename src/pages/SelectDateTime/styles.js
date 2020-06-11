@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   max-width: 600px;
-  margin: 50px auto;
+  margin: 0px auto;
   display: flex;
   flex-direction: column;
   color: #fff;
@@ -58,4 +58,15 @@ export const Time = styled.li`
     margin-top: 3px;
     color: ${props => (props.avaiable ? '#999' : '#666')};
   }
+`;
+
+export const Margin = styled.div`
+  height: 90px;
+`;
+
+export const Background = styled.div`
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background: linear-gradient(-90deg, #056600, #08a200);
 `;

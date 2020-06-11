@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import api from '~/services/api';
 
-import { Container, Provider, ProvidersList, Name, Avatar } from './styles';
+import { Container, Provider, ProvidersList, Avatar } from './styles';
 
 function Worker() {
   const [providers, setProviders] = useState([]);
@@ -24,18 +24,46 @@ function Worker() {
       <div>
         <ProvidersList>
           {providers.map(provider => (
-            <Link to={`/selectdatetime/${provider.id}/${provider.name}`}>
-              <Provider>
-                <Avatar
-                  src={
-                    (provider.avatar && provider.avatar.url) ||
-                    `https://api.adorable.io/avatars/50/abott@adorable.png`
-                  }
-                  alt="Avatar"
-                />
-                <Name>{provider.name}</Name>
-              </Provider>
-            </Link>
+            <>
+              <Link
+                to={`/selectdatetime/${provider.user.id}/${provider.user.name}`}
+              >
+                <Provider>
+                  <div>
+                    <Avatar
+                      src={
+                        (provider.user.avatar && provider.user.avatar.url) ||
+                        `https://api.adorable.io/avatars/50/abott@adorable.png`
+                      }
+                      alt="Avatar"
+                    />
+                  </div>
+
+                  <strong
+                    style={{
+                      marginTop: '4px',
+                      fontWeight: 'bold',
+                      color: '#999',
+                    }}
+                  >
+                    {provider.user.name} da Silva nobrega da nobrega de novo da
+                    silva
+                  </strong>
+                  <strong style={{ fontSize: '9px', color: '#ccc' }}>
+                    CRM: {provider.crm}
+                  </strong>
+                  <strong
+                    style={{
+                      marginTop: '4px',
+                      fontSize: '11px',
+                      color: '#999',
+                    }}
+                  >
+                    {provider.specialty}
+                  </strong>
+                </Provider>
+              </Link>
+            </>
           ))}
         </ProvidersList>
       </div>

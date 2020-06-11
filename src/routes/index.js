@@ -9,6 +9,7 @@ import List from '../pages/List';
 import Confirm from '../pages/Confirm';
 import SelectDateTime from '../pages/SelectDateTime';
 import Profile from '../pages/Profile';
+import Doctor from '../pages/Profile/DoctorProfile';
 import Adm from '../pages/Adm';
 
 export default function Routes() {
@@ -22,6 +23,7 @@ export default function Routes() {
       <Route path="/booking" exact component={Booking} isPrivate />
       <Route path="/dashboard" component={Dashboard} isPrivate />
       <Route path="/profile" component={Profile} isPrivate />
+      <Route path="/doctor" component={Doctor} isPrivate />
       <Route path="/adm" component={Adm} isPrivate />
 
       <Route

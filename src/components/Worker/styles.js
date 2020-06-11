@@ -9,29 +9,28 @@ export const ProvidersList = styled.li`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 15px;
-  margin-top: 30px;
+  margin: 30px 0px 80px 0px;
   padding: 0px;
 `;
 
-export const Name = styled.p`
-  margin-top: 15px;
-  font-size: 14px;
-  font-weight: bold;
-  color: #333;
-  text-align: center;
-`;
-
-export const Provider = styled.button`
+export const Provider = styled.div`
   background: #fff;
-  border-radius: 4px;
+  border-radius: 8px;
   padding: 20px;
-  min-width: 200px;
-  flex: 1;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  margin: 0 0px 0px;
+
+  margin: 25px 0px 0px;
+  -webkit-box-shadow: 0px 0px 25px 0px rgba(191, 191, 191, 1);
+  -moz-box-shadow: 0px 0px 25px 0px rgba(191, 191, 191, 1);
+  box-shadow: 0px 0px 25px 0px rgba(191, 191, 191, 1);
 `;
 export const Avatar = styled.img`
-  width: 50px;
-  height: 50px;
-  border-radius: 25px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
 `;

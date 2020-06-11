@@ -51,3 +51,14 @@ export const Time = styled.li`
     color: ${props => (props.available ? '#999' : '#666')};
   }
 `;
+
+export const Margin = styled.div`
+  height: 40px;
+`;
+
+export const Background = styled.div`
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(-90deg, #056600, #08a200);
+`;
