@@ -21,7 +21,7 @@ export default function SelectDateTime() {
         },
       });
 
-      console.tron.log(response.data);
+      // console.tron.log(response.data);
 
       setHours(response.data);
     }
