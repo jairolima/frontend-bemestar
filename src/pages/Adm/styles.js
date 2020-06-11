@@ -40,8 +40,11 @@ export const Appointment = styled.div`
   min-width: 200px;
   flex: 1;
   align-items: center;
-  margin: 50px 0 10px 0;
+  margin: 50px 0 100px 0;
   border-radius: 20px;
+  -webkit-box-shadow: 0px 0px 25px 0px rgba(191, 191, 191, 1);
+  -moz-box-shadow: 0px 0px 25px 0px rgba(191, 191, 191, 1);
+  box-shadow: 0px 0px 25px 0px rgba(191, 191, 191, 1);
 `;
 
 export const Box = styled.div`
@@ -49,6 +52,7 @@ export const Box = styled.div`
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 15px;
   margin-top: 30px;
+
   width: 100%;
   div {
     text-align: bottom;
@@ -68,4 +72,11 @@ export const Box = styled.div`
     background: #fff;
     border-radius: 20px;
   }
+`;
+
+export const Shadow = styled.div`
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 0px 25px 0px rgba(191, 191, 191, 1);
+  -moz-box-shadow: 0px 0px 25px 0px rgba(191, 191, 191, 1);
+  box-shadow: 0px 0px 25px 0px rgba(191, 191, 191, 1);
 `;

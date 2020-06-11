@@ -6,7 +6,7 @@ import 'mdbreact/dist/css/mdb.css';
 
 import api from '~/services/api';
 
-import { Container, Box, Appointment } from './styles';
+import { Container, Box, Appointment, Shadow } from './styles';
 
 export default function Adm() {
   const profile = useSelector(state => state.user.profile);
@@ -41,57 +41,36 @@ export default function Adm() {
       {profile.id === 17 && (
         <>
           <Box>
-            <div>
+            <Shadow>
               <strong>
                 {quantity.numdaily}
                 <span>Hoje</span>
               </strong>
-            </div>
-            <div>
+            </Shadow>
+            <Shadow>
               <strong>
                 {quantity.numappointments}
                 <span>Agendamentos</span>
               </strong>
-            </div>
-            <div>
+            </Shadow>
+            <Shadow>
               <strong>
                 {quantity.numusers}
                 <span>Clientes</span>
               </strong>
-            </div>
-            <div>
+            </Shadow>
+            <Shadow>
               <strong>
                 {quantity.numproviders}
                 <span>Serviços</span>
               </strong>
-            </div>
+            </Shadow>
           </Box>
 
           <Appointment>
             Todos os agendamentos:
             <MDBDataTable striped bordered hover data={data} />
           </Appointment>
-
-          <div style={{ color: '#fff', marginTop: '40px' }}>
-            <strong>Notas atualizacao (1.0.7):</strong>
-            <ul>
-              <li>- Adicionado dia da semana ao listar horarios</li>
-              <li>
-                - Mudança horario ultrassonografia 8:00 às 12:00 de 15 em 15min
-              </li>
-              <li>
-                - Mudança nos horarios de todos os serviços 07:00 às 12:00 de 20
-                em 20 min excluindo sabados e domingos
-              </li>
-              <li>- Adicionado Gastroenterologista e Pediatra</li>
-              <li>
-                - Adicionado mensagem de agenda nao disponivel caso o servico
-                nao estiver disponivel na data pesquisada
-              </li>
-              <li>- Correcao bug listagem agendamentos em vigor</li>
-              <li>- Alteracao cor botao voltar agendamento</li>
-            </ul>
-          </div>
         </>
       )}
     </Container>

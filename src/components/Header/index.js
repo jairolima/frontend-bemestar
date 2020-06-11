@@ -15,7 +15,7 @@ export default function Header() {
       <Content>
         <nav>
           <img src={logo} width="64px" height="64px" alt="BemEstar" />
-          {profile.id == 17 && <Link to="/adm">SYS BEM ESTAR 1.0.7</Link>}
+          {profile.id == 17 && <Link to="/adm">SYS BEM ESTAR 1.2.5</Link>}
           {profile.provider == false && profile.id != 17 && (
             <Link to="/booking">AGENDAMENTO</Link>
           )}
