@@ -106,7 +106,7 @@ export default function Dashboard() {
   return (
     <Background>
       <Margin />
-      <p>{JSON.stringify(date)}</p>
+
       <Container>
         <header>
           <button type="button">
@@ -117,7 +117,6 @@ export default function Dashboard() {
             <MdChevronRight size={26} color="FFF" onClick={handleNextDay} />
           </button>
         </header>
-        <p>{JSON.stringify(schedule)}</p>
 
         <ul>
           {schedule.map(time => (
