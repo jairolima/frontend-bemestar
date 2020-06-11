@@ -66,7 +66,7 @@ export default function SelectDateTime() {
         <strong>{weekday == 5 ? <h3>Sexta-feira</h3> : ''}</strong>
         <strong>{weekday == 6 ? <h3>Sábado</h3> : ''}</strong>
         {/* {JSON.stringify(hours)} */}
-        <ul>
+        <ul style={{ marginBottom: '120px' }}>
           {hours.map(time => (
             <Link
               className={!time.avaiable ? 'disabled-link' : ''}

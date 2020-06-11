@@ -143,6 +143,7 @@ export default function Dashboard() {
             </Time>
           ))}
         </ul>
+        <Margin />
       </Container>
     </Background>
   );

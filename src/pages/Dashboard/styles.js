@@ -60,5 +60,6 @@ export const Background = styled.div`
   margin: 0;
   height: 100%;
   width: 100%;
+  overflow: auto;
   background: linear-gradient(-90deg, #056600, #08a200);
 `;
