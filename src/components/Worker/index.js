@@ -46,8 +46,7 @@ function Worker() {
                       color: '#999',
                     }}
                   >
-                    {provider.user.name} da Silva nobrega da nobrega de novo da
-                    silva
+                    {provider.user.name}
                   </strong>
                   <strong style={{ fontSize: '9px', color: '#ccc' }}>
                     CRM: {provider.crm}
