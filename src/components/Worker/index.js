@@ -46,7 +46,7 @@ function Worker() {
                       color: '#999',
                     }}
                   >
-                    {provider.user.name}
+                    {provider.specialty}
                   </strong>
                   <strong style={{ fontSize: '9px', color: '#ccc' }}>
                     CRM: {provider.crm}
@@ -58,7 +58,7 @@ function Worker() {
                       color: '#999',
                     }}
                   >
-                    {provider.specialty}
+                    {provider.user.name}
                   </strong>
                 </Provider>
               </Link>
