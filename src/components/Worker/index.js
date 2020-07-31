@@ -95,7 +95,7 @@ function Worker() {
         })
       );
 
-      console.tron.log(asyncRes);
+      // console.tron.log(asyncRes);
 
       setProviders(asyncRes);
     }
@@ -143,7 +143,7 @@ function Worker() {
 
   async function handleBeforeDays(par1) {
     const before = new Date(par1.date.getTime() - 345600000);
-    console.tron.log(par1.date);
+    // console.tron.log(par1.date);
     const newProviders = await Promise.all(
       providers.map(async provider =>
         provider.user.id !== par1.user.id
@@ -179,7 +179,7 @@ function Worker() {
 
     setProviders(newProviders);
 
-    console.tron.log(newProviders);
+    // console.tron.log(newProviders);
     // console.tron.log(currentFilter);
   }
 
@@ -220,7 +220,7 @@ function Worker() {
 
     setProviders(newProviders);
 
-    console.tron.log(newProviders);
+    // console.tron.log(newProviders);
     // console.tron.log(currentFilter);
   }
 
