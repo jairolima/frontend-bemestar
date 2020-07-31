@@ -447,7 +447,11 @@ function Worker() {
                             }}
                             alt="avatar"
                             variant="top"
-                            src="https://api.adorable.io/avatars/50/abott@adorable.png"
+                            src={
+                              (provider.user.avatar &&
+                                provider.user.avatar.url) ||
+                              `https://api.adorable.io/avatars/50/abott@adorable.png`
+                            }
                           />
                           <h6>{provider.user.name}</h6>
                           <strong>crm: {provider.crm}</strong>
