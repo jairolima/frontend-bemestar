@@ -16,8 +16,8 @@ export const colourOptions = [
     label: 'Endocrinologista',
   },
   {
-    value: 'Gastroenterologia',
-    label: 'Gastroenterologia',
+    value: 'Gastroenterologista',
+    label: 'Gastroenterologista',
   },
   {
     value: 'Geriatra',
