@@ -2,11 +2,10 @@ import styled from 'styled-components';
 import { darken } from 'polished';
 
 export const Container = styled.div`
-  max-width: 600px;
-  margin: 50px auto;
+  width: 100%;
+  margin: 0px auto;
   display: flex;
   flex-direction: column;
-  height: 100%;
 
   header {
     display: flex;
@@ -23,13 +22,6 @@ export const Container = styled.div`
       font-size: 24px;
       margin: 0 15px;
     }
-  }
-
-  ul {
-    display: grid;
-    grid-template-columns: repeat(2, 2fr);
-    grid-gap: 15px;
-    margin-top: 30px;
   }
 `;
 

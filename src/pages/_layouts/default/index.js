@@ -1,15 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Wrapper } from './styles';
-import Header from '~/components/Header';
+// import { Wrapper } from './styles';
+// import HeaderNotSignIn from '~/components/HeaderNotSignIn';
 
 export default function DefaultLayout({ children }) {
-  return (
-    <Wrapper>
-      <Header />
-      {children}
-    </Wrapper>
-  );
+  return <>{children}</>;
 }
 
 DefaultLayout.propTypes = {

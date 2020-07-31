@@ -72,16 +72,20 @@ export function* updateDoctorProfile({ payload }) {
 
 export function* updateProfileBooking({ payload }) {
   try {
-    const { date, provider_id } = payload;
+    const { date, provider_id, filter } = payload;
 
     yield call(api.post, 'appointments', {
       date,
       provider_id,
+      filter,
     });
+
     toast.success('Agendamento efetuado com sucesso!');
-    history.push('/booking');
-  } catch (err) {
+    history.push('/profile');
+  } catch (error) {
+    console.tron.log(error);
     toast.error('Falha no agendamento, verifique seus dados!');
+    history.push('/profile');
   }
 }
 

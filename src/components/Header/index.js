@@ -17,7 +17,7 @@ export default function Header() {
           <img src={logo} width="64px" height="64px" alt="BemEstar" />
           {profile.id == 17 && <Link to="/adm">SYS BEM ESTAR 1.2.5</Link>}
           {profile.provider == false && profile.id != 17 && (
-            <Link to="/booking">AGENDAMENTO</Link>
+            <Link to="/">AGENDAMENTO</Link>
           )}
           {profile.provider && <Link to="/dashboard">AGENDA</Link>}
         </nav>
@@ -31,8 +31,12 @@ export default function Header() {
           )}
           <Profile>
             <div>
-              <strong>{profile.name}</strong>
-              <Link to="/profile">Meu perfil</Link>
+              <strong>{profile.name ? profile.name : 'Olá, visitante'}</strong>
+              {profile.name ? (
+                <Link to="/profile">Meu perfil</Link>
+              ) : (
+                <Link to="/register">Criar conta</Link>
+              )}
             </div>
             {profile.provider && (
               <img

@@ -15,12 +15,12 @@ import Adm from '../pages/Adm';
 export default function Routes() {
   return (
     <Switch>
-      <Route path="/" exact component={SignIn} />
+      <Route path="/signin" exact component={SignIn} />
       <Route path="/register" component={SignUp} />
 
       <Route path="/list" exact component={List} />
 
-      <Route path="/booking" exact component={Booking} isPrivate />
+      <Route path="/" exact component={Booking} />
       <Route path="/dashboard" component={Dashboard} isPrivate />
       <Route path="/profile" component={Profile} isPrivate />
       <Route path="/doctor" component={Doctor} isPrivate />

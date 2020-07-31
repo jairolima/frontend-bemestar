@@ -28,7 +28,7 @@ export function* signIn({ payload }) {
     } else if (user.provider) {
       history.push('/Dashboard');
     } else {
-      history.push('/Booking');
+      history.push('/');
     }
   } catch (err) {
     toast.error('Falha na autenticação, verifique seu telefone/senha');
@@ -66,7 +66,7 @@ export function* signUp({ payload }) {
     if (user.provider) {
       history.push('/Dashboard');
     } else {
-      history.push('/Booking');
+      history.push('/');
     }
   } catch (err) {
     toast.error('Falha no cadastro verifique seus dados!');
@@ -82,8 +82,11 @@ export function setToken({ payload }) {
   }
 }
 
-export function signOut() {
-  history.push('/');
+export function* signOut() {
+  // navegar direto dando refresh
+  window.open('/', '_self');
+  // history.push('/');
+  yield put(signOut());
 }
 
 export default all([
