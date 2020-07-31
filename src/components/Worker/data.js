@@ -113,26 +113,27 @@ export const flavourOptions = [
   {
     value: 'Audiometria tonal',
     label: 'Audiometria tonal',
+    isDisabled: true,
   },
   {
     value: 'Audiometria vocal',
     label: 'Audiometria vocal',
-  },
-  {
-    value: 'Reumatologista',
-    label: 'Reumatologista',
+    isDisabled: true,
   },
   {
     value: 'Avaliação e terapia de linguagem oral e escrita',
     label: 'Avaliação e terapia de linguagem oral e escrita',
+    isDisabled: true,
   },
   {
     value: 'Terapia de voz',
     label: 'Terapia de voz',
+    isDisabled: true,
   },
   {
     value: 'Motricidade orofacial e disfagia',
     label: 'Motricidade orofacial e disfagia',
+    isDisabled: true,
   },
   {
     value: 'Ginecologia',
@@ -150,6 +151,15 @@ export const flavourOptions = [
   {
     value: 'Biopsia colo útero',
     label: 'Biopsia colo útero',
+  },
+  {
+    value: 'Otorrino',
+    label: 'Otorrino Exames:',
+    isDisabled: true,
+  },
+  {
+    value: 'Lavagem cada ouvido',
+    label: 'Lavagem cada ouvido',
   },
   {
     value: 'Raio X',

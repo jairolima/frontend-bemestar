@@ -15,7 +15,7 @@ export default function Footer() {
           &copy; {new Date().getFullYear()} Copyright:{' '}
           <a
             style={{ color: 'white' }}
-            href="https://www.policlinicabemestar.com"
+            href="https://www.agenda.policlinicabemestar.com/"
           >
             {' '}
             Policlinica BemEstar{' '}
