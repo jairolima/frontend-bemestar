@@ -16,6 +16,10 @@ export const colourOptions = [
     label: 'Endocrinologista',
   },
   {
+    value: 'Fonoaudióloga',
+    label: 'Fonoaudióloga',
+  },
+  {
     value: 'Gastroenterologista',
     label: 'Gastroenterologista',
   },
@@ -113,27 +117,22 @@ export const flavourOptions = [
   {
     value: 'Audiometria tonal',
     label: 'Audiometria tonal',
-    isDisabled: true,
   },
   {
     value: 'Audiometria vocal',
     label: 'Audiometria vocal',
-    isDisabled: true,
   },
   {
     value: 'Avaliação e terapia de linguagem oral e escrita',
     label: 'Avaliação e terapia de linguagem oral e escrita',
-    isDisabled: true,
   },
   {
     value: 'Terapia de voz',
     label: 'Terapia de voz',
-    isDisabled: true,
   },
   {
     value: 'Motricidade orofacial e disfagia',
     label: 'Motricidade orofacial e disfagia',
-    isDisabled: true,
   },
   {
     value: 'Ginecologia',
