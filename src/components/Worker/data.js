@@ -188,16 +188,60 @@ export const flavourOptions = [
     label: 'Abdomen total',
   },
   {
+    value: 'Cervical/Pescoço',
+    label: 'Cervical/Pescoço',
+  },
+  {
+    value: 'Doppler de carótidas e vertebrais',
+    label: 'Doppler de carótidas e vertebrais',
+  },
+  {
+    value: 'Doppler de membro inferior (Ambos)',
+    label: 'Doppler de membro inferior (Ambos)',
+  },
+  {
+    value: 'Doppler de membro inferior (Um membro)',
+    label: 'Doppler de membro inferior (Um membro)',
+  },
+  {
+    value: 'Inguinal bilateral',
+    label: 'Inguinal bilateral',
+  },
+  {
+    value: 'Inguinal',
+    label: 'Inguinal',
+  },
+  {
     value: 'Mamaria',
     label: 'Mamaria',
+  },
+  {
+    value: 'Morfologica',
+    label: 'Morfologica',
+  },
+  {
+    value: 'Obstétrica',
+    label: 'Obstétrica',
+  },
+  {
+    value: 'Obstétrica com doppler',
+    label: 'Obstétrica com doppler',
   },
   {
     value: 'Obstétrica gemelar',
     label: 'Obstétrica gemelar',
   },
   {
-    value: 'Obstétrica',
-    label: 'Obstétrica',
+    value: 'Obstétrica gemelar com doppler',
+    label: 'Obstétrica gemelar com doppler',
+  },
+  {
+    value: 'Pequenas partes',
+    label: 'Pequenas partes',
+  },
+  {
+    value: 'Transvaginal com doppler',
+    label: 'Transvaginal com doppler',
   },
   {
     value: 'Pelvica',
