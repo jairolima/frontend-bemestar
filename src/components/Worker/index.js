@@ -454,7 +454,7 @@ function Worker() {
                             }
                           />
                           <h6>{provider.user.name}</h6>
-                          <strong>crm: {provider.crm}</strong>
+                          <strong>{provider.crm}</strong>
                         </div>
                       </Col>
                       <Col
