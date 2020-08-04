@@ -47,10 +47,13 @@ export const colourOptions = [
     value: 'Otorrino',
     label: 'Otorrino',
   },
-
   {
     value: 'Pediatra',
     label: 'Pediatra',
+  },
+  {
+    value: 'Psicóloga',
+    label: 'Psicóloga',
   },
   {
     value: 'Reumatologista',
