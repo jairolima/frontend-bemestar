@@ -56,6 +56,10 @@ export const colourOptions = [
     label: 'Psicóloga',
   },
   {
+    value: 'Psiquiatra',
+    label: 'Psiquiatra',
+  },
+  {
     value: 'Reumatologista',
     label: 'Reumatologista',
   },
