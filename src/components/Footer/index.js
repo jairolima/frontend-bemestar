@@ -10,14 +10,15 @@ export default function FooterBE() {
       <div>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
           <path
-            fill="#000"
+            fill="#ddfdea"
             fillOpacity="1"
             d="M0,192L360,224L720,160L1080,192L1440,96L1440,320L1080,320L720,320L360,320L0,320Z"
           />
         </svg>
         <Footer
-          backgroundColor="#000"
-          style={{ marginTop: '-40px' }}
+          theme="light"
+          backgroundColor="#ddfdea"
+          style={{ marginTop: '-40px', color: '#000' }}
           columns={[
             {
               icon: (
