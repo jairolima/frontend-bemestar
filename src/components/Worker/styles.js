@@ -92,3 +92,49 @@ export const Time = styled.li`
 //   -moz-box-shadow: 0px 0px 25px 0px rgba(191, 191, 191, 1);
 //   box-shadow: 0px 0px 25px 0px rgba(191, 191, 191, 1);
 // `;
+
+/* Basic button styling */
+export const PulsingBtn = styled.a`
+  width: 220px;
+  text-align: center;
+  white-space: nowrap;
+  padding: 12px 20px;
+  box-shadow: 0 0 0 0 rgba(42, 245, 152, 0.7);
+  border-radius: 15px;
+  background: linear-gradient(-90deg, #1edb50, #00c851);
+  -webkit-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  -moz-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  -ms-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  font-size: 22px;
+  font-weight: normal;
+  font-family: sans-serif;
+  text-decoration: none !important;
+  transition: all 300ms ease-in-out;
+
+  /* Animation */
+
+  @-webkit-keyframes pulsing {
+    to {
+      box-shadow: 0 0 0 30px rgba(232, 76, 61, 0);
+    }
+  }
+
+  @-moz-keyframes pulsing {
+    to {
+      box-shadow: 0 0 0 30px rgba(232, 76, 61, 0);
+    }
+  }
+
+  @-ms-keyframes pulsing {
+    to {
+      box-shadow: 0 0 0 30px rgba(232, 76, 61, 0);
+    }
+  }
+
+  @keyframes pulsing {
+    to {
+      box-shadow: 0 0 0 30px rgba(232, 76, 61, 0);
+    }
+  }
+`;

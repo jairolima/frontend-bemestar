@@ -147,10 +147,7 @@ export default function HeaderNotSignIn() {
                   />
                   <InputMask mask="999.999.999-99">
                     {() => (
-                      <Input
-                        name="password_hash"
-                        placeholder="000.000.000-00 *"
-                      />
+                      <Input name="password_hash" placeholder="Seu CPF *" />
                     )}
                   </InputMask>
                   <Input name="email" type="email" placeholder="Seu e-mail" />
@@ -226,6 +223,7 @@ export default function HeaderNotSignIn() {
             >
               <strong
                 style={{
+                  fontWeight: 'bold',
                   fontFamily:
                     'Gordita, -apple-system, system-ui, "Segoe UI", Roboto, sans-serif',
                 }}
