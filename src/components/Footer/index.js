@@ -69,7 +69,7 @@ export default function FooterBE() {
                     />
                   ),
                   title: '(83) 986180305',
-                  url: 'https://wa.me/83986180305',
+                  url: 'https://wa.me/5583986180305',
                   description: 'Whatsapp',
                   openExternal: true,
                 },

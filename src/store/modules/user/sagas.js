@@ -27,7 +27,6 @@ export function* updateProfile({ payload }) {
 
     yield put(updateProfileSuccess(response.data));
   } catch (error) {
-    console.tron.log(error);
     toast.error('Erro ao atualizar Perfil');
     yield put(updateProfilefailure());
   }
@@ -64,7 +63,6 @@ export function* updateDoctorProfile({ payload }) {
     toast.success('Perfil de medico atualizado com sucesso!');
     yield put(updateDoctorProfileSuccess(response.data));
   } catch (error) {
-    console.tron.log(error);
     toast.error('Erro ao atualizar Perfil de Medico');
     yield put(updateDoctorProfilefailure());
   }
@@ -83,9 +81,31 @@ export function* updateProfileBooking({ payload }) {
     toast.success('Agendamento efetuado com sucesso!');
     history.push('/profile');
   } catch (error) {
-    console.tron.log(error);
     toast.error('Falha no agendamento, verifique seus dados!');
     history.push('/profile');
+  }
+}
+
+export function* updateBookingRequest({ payload }) {
+  try {
+    const { id, Recepcionista, Pagamento } = payload;
+    const booking = {
+      id,
+      recepcionist: Recepcionista,
+      payment_option: Pagamento,
+      showed_up: 'Sim',
+    };
+
+    yield call(api.put, 'allappointments', booking);
+    // navegar direto dando refresh
+    window.open('/adm', '_self');
+
+    toast.success('Agendamento atualizado com sucesso!');
+  } catch (error) {
+    // navegar direto dando refresh
+    window.open('/adm', '_self');
+
+    toast.error('Erro ao atualizar Agendamento');
   }
 }
 
@@ -93,4 +113,5 @@ export default all([
   takeLatest('@user/UPDATE_PROFILE_REQUEST', updateProfile),
   takeLatest('@user/UPDATE_DOCTOR_PROFILE_REQUEST', updateDoctorProfile),
   takeLatest('@user/UPDATE_PROFILE_BOOKING', updateProfileBooking),
+  takeLatest('@user/UPDATE_BOOKING_REQUEST', updateBookingRequest),
 ]);

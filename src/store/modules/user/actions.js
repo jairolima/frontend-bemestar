@@ -44,3 +44,10 @@ export function updateDoctorProfilefailure() {
     type: '@user/UPDATE_DOCTOR_PROFILE_FAILURE',
   };
 }
+
+export function updateBookingRequest(Pagamento, Recepcionista, id) {
+  return {
+    type: '@user/UPDATE_BOOKING_REQUEST',
+    payload: { Pagamento, Recepcionista, id },
+  };
+}
