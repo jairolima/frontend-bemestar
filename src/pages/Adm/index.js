@@ -122,7 +122,8 @@ export default function Adm() {
                   -- Recepcionista --{' '}
                 </option>
                 <option value="Thaís">Thaís</option>
-                <option value="Maria">Maria</option>
+                <option value="Bruna">Bruna</option>
+                <option value="Mozielle">Mozielle</option>
               </select>
               <br />
               <br />

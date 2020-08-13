@@ -92,8 +92,8 @@ export default function FooterBE() {
                       alt="Email Policlínica Bem Estar"
                     />
                   ),
-                  title: 'pb.bemestar@gmail.com',
-                  url: 'mailto:pb.bemestar@gmail.com',
+                  title: 'atendimento@policlinicabemestar.com',
+                  url: 'mailto:atendimento@policlinicabemestar.com',
                   description: 'Email',
                   openExternal: true,
                 },

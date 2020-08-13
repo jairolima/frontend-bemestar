@@ -83,8 +83,8 @@ export default function Profile() {
           <Input name="email" placeholder="Seu email" disabled />
           <Input
             name="password_hash"
-            value={`***.***.**${profile.password_hash.substring(10, 14)}`}
-            placeholder="Seu CPF"
+            value={profile.password_hash}
+            placeholder={`***.***.**${profile.password_hash.substring(10, 14)}`}
             disabled
           />
           <hr />
