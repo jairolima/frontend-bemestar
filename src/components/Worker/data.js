@@ -64,10 +64,6 @@ export const colourOptions = [
     label: 'Reumatologista',
   },
   {
-    value: 'Ultrassonografista',
-    label: 'Ultrassonografista',
-  },
-  {
     value: 'Urologista',
     label: 'Urologista',
   },
@@ -240,6 +236,10 @@ export const flavourOptions = [
   {
     value: 'Obstétrica gemelar com doppler',
     label: 'Obstétrica gemelar com doppler',
+  },
+  {
+    value: 'Parede abdominal',
+    label: 'Parede abdominal',
   },
   {
     value: 'Pequenas partes',
