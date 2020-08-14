@@ -16,10 +16,6 @@ export const colourOptions = [
     label: 'Endocrinologista',
   },
   {
-    value: 'Fonoaudióloga',
-    label: 'Fonoaudióloga',
-  },
-  {
     value: 'Gastroenterologista',
     label: 'Gastroenterologista',
   },
