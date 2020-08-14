@@ -76,14 +76,14 @@ export default function Profile() {
             </Form>
           </>
         ))}
-
+        {/* `***.***.**${profile.password_hash.substring(10, 14)}` */}
         <Form initialData={profile} onSubmit={handleSubmit}>
           {profile.provider && <AvatarInput name="avatar_id" />}
 
           <Input name="email" placeholder="Seu email" disabled />
           <Input
             name="password_hash"
-            value={`***.***.**${profile.password_hash.substring(10, 14)}`}
+            value={profile.password_hash}
             placeholder="Seu CPF"
             disabled
           />
