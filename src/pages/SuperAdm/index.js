@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 import React, { useState, useEffect } from 'react';
 // import { MDBDataTable } from 'mdbreact';
 import 'bootstrap-css-only/css/bootstrap.min.css';
@@ -6,16 +7,18 @@ import { useSelector, useDispatch } from 'react-redux';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import { useForm } from 'react-hook-form';
-import { updateBookingRequest } from '~/store/modules/user/actions';
-import whatsapp from '~/assets/whatsapp.svg';
-
+import { Bar } from 'react-chartjs-2';
 import 'mdbreact/dist/css/mdb.css';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import { updateBookingRequest } from '~/store/modules/user/actions';
 
 import api from '~/services/api';
 
-import { Container, Box, Appointment, Shadow, Login, Whatsapp } from './styles';
+import { Appointment, Shadow, Login } from './styles';
 
-export default function Adm() {
+export default function SuperAdm() {
   const dispatch = useDispatch();
 
   const profile = useSelector(state => state.user.profile);
@@ -53,19 +56,18 @@ export default function Adm() {
     'Filtro',
     'Preço',
     'Plano',
-    'Confirmou',
     'Compareceu',
+    'Confirmou',
     'Pagamento',
     'Descrição',
     'Recepcionista',
-    'Desconto',
-    'Comissão'
   ];
 
   const datarows = allappointments.rows;
 
   const [show, setShow] = useState(false);
   const [currentRowData, setCurrentRowData] = useState('');
+  const [currentTableData, setCurrentTableData] = useState('');
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -73,6 +75,10 @@ export default function Adm() {
   function handleEdit(par1) {
     setCurrentRowData(par1);
     handleShow();
+  }
+
+  function handleTableData(par1) {
+    setCurrentTableData(par1);
   }
 
   const options = {
@@ -83,6 +89,9 @@ export default function Adm() {
     },
     onRowsDelete: 'false',
     customToolbarSelect: () => {},
+    onTableInit: tableData => {
+      handleTableData(tableData);
+    },
   };
 
   function handleSubmit2(data) {
@@ -93,6 +102,21 @@ export default function Adm() {
   const { register, handleSubmit } = useForm();
   const onSubmit = data => handleSubmit2(data);
 
+  const datachart = {
+    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+    datasets: [
+      {
+        label: 'My First dataset',
+        backgroundColor: 'rgba(255,99,132,0.2)',
+        borderColor: 'rgba(255,99,132,1)',
+        borderWidth: 1,
+        hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+        hoverBorderColor: 'rgba(255,99,132,1)',
+        data: [65, 59, 80, 81, 56, 55, 40],
+      },
+    ],
+  };
+
   return (
     <Container>
       <Modal show={show} onHide={handleClose}>
@@ -100,19 +124,7 @@ export default function Adm() {
           <Modal.Title>Atualizar agendamento</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Whatsapp>
-            <a href={`https://api.whatsapp.com/send?phone=55${parseInt(String(currentRowData[5]).replace(/[^0-9]/g, ''), 10)}&text=Oi ${currentRowData[1]}, este é um lembrete que você tem uma consulta com ${currentRowData[2]} para ${currentRowData[3]}, *Clique neste link para confirmar:* localhost:3000/wz/confirm/${btoa(currentRowData[0])} Ou neste link para cancelar: localhost:3000/wz/cancel/${btoa(currentRowData[0])}`} rel="noopener noreferrer" target="_blank">
-
-          <img
-                width="35%"
-                height="35%"
-                src={whatsapp}
-                alt="Policlinica BemEstar"
-              />
-              </a>
-          </Whatsapp>
           <Login>
-
             <form onSubmit={handleSubmit(onSubmit)}>
               <input
                 required
@@ -150,34 +162,65 @@ export default function Adm() {
           </Login>
         </Modal.Body>
       </Modal>
-      {profile.id === 17 && (
+      {profile.id === 2 && (
         <>
-          <Box>
-            <Shadow>
-              <strong>
-                {quantity.numdaily}
-                <span>Hoje</span>
-              </strong>
-            </Shadow>
-            <Shadow>
-              <strong>
-                {quantity.numappointments}
-                <span>Agendamentos</span>
-              </strong>
-            </Shadow>
-            <Shadow>
-              <strong>
-                {quantity.numusers}
-                <span>Clientes</span>
-              </strong>
-            </Shadow>
-            <Shadow>
-              <strong>
-                {quantity.numproviders}
-                <span>Serviços</span>
-              </strong>
-            </Shadow>
-          </Box>
+          <Container>
+            <Row className="justify-content-md-center">
+              <Col xs="3" lg="3" style={{ backgroundColor: 'transparent' }}>
+                <Shadow>
+                  <strong>
+                    {quantity.numdaily}
+                    <span>Serviços</span>
+                  </strong>
+                </Shadow>
+              </Col>
+              <Col xs="3" lg="3" style={{ backgroundColor: 'transparent' }}>
+                <Shadow>
+                  <strong>
+                    {quantity.numappointments}
+                    <span>Serviços</span>
+                  </strong>
+                </Shadow>
+              </Col>
+              <Col xs="3" lg="3" style={{ backgroundColor: 'transparent' }}>
+                <Shadow>
+                  <strong>
+                    {quantity.numusers}
+                    <span>Serviços</span>
+                  </strong>
+                </Shadow>
+              </Col>
+              <Col xs="3" lg="3" style={{ backgroundColor: 'transparent' }}>
+                <Shadow>
+                  <strong>
+                    {quantity.numproviders}
+                    <span>Serviços</span>
+                  </strong>
+                </Shadow>
+              </Col>
+            </Row>
+          </Container>
+          <strong>{JSON.stringify(currentTableData)}</strong>
+          <Container>
+            <Row className="justify-content-md-center">
+              <Col xs="6" lg="6" style={{ backgroundColor: 'transparent' }}>
+                <Bar
+                  data={datachart}
+                  options={{
+                    maintainAspectRatio: false,
+                  }}
+                />
+              </Col>
+              <Col xs="6" lg="6" style={{ backgroundColor: 'transparent' }}>
+                <Bar
+                  data={datachart}
+                  options={{
+                    maintainAspectRatio: false,
+                  }}
+                />
+              </Col>
+            </Row>
+          </Container>
 
           <Appointment>
             {/* <MDBDataTable striped bordered hover data={data} /> */}

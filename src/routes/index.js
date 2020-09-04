@@ -11,6 +11,11 @@ import SelectDateTime from '../pages/SelectDateTime';
 import Profile from '../pages/Profile';
 import Doctor from '../pages/Profile/DoctorProfile';
 import Adm from '../pages/Adm';
+import SuperAdm from '../pages/SuperAdm';
+import WhatsappConfirm from '../pages/WhatsappConfirm';
+import ConfirmationSuccess from '../pages/WhatsappConfirm/ConfirmationSuccess';
+import WhatsappCancel from '../pages/WhatsappCancel';
+import ConfirmationCancel from '../pages/WhatsappCancel/ConfirmationCancel';
 
 export default function Routes() {
   return (
@@ -25,6 +30,30 @@ export default function Routes() {
       <Route path="/profile" component={Profile} isPrivate />
       <Route path="/doctor" component={Doctor} isPrivate />
       <Route path="/adm" component={Adm} isPrivate />
+      <Route path="/superadm" component={SuperAdm} isPrivate />
+
+      <Route
+        path="/wz/confirm/:bookingId"
+        exact
+        component={WhatsappConfirm}
+      />
+      <Route
+        path="/wz/confirmation/true"
+        exact
+        component={ConfirmationSuccess}
+      />
+
+      <Route
+        path="/wz/cancel/:bookingId"
+        exact
+        component={WhatsappCancel}
+      />
+      <Route
+        path="/wz/confirmation/false"
+        exact
+        component={ConfirmationCancel}
+      />
+
 
       <Route
         path="/confirm/:time/:providerId/:providerName"

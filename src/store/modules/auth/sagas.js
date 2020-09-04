@@ -27,6 +27,8 @@ export function* signIn({ payload }) {
       history.push('/Adm');
     } else if (user.provider) {
       history.push('/Dashboard');
+    } else if (user.id === 2) {
+      history.push('/superadm');
     } else {
       history.push('/');
     }
