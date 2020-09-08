@@ -36,6 +36,10 @@ export const colourOptions = [
     label: 'Medicina Integ. e Longevidade',
   },
   {
+    value: 'Nutricionista',
+    label: 'Nutricionista',
+  },
+  {
     value: 'Ortopedista',
     label: 'Ortopedista',
   },
