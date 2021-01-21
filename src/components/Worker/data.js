@@ -40,6 +40,10 @@ export const colourOptions = [
     label: 'Nutricionista',
   },
   {
+    value: 'Nutrologista',
+    label: 'Nutrologista',
+  },
+  {
     value: 'Ortopedista',
     label: 'Ortopedista',
   },
