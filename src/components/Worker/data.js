@@ -168,6 +168,14 @@ export const flavourOptions = [
     label: 'Lavagem cada ouvido',
   },
   {
+    value: 'Videolaringoscopia com filmagem e laudo',
+    label: 'Videolaringoscopia com filmagem e laudo',
+  },
+  {
+    value: 'Videolaringoscopia com laudo',
+    label: 'Videolaringoscopia com laudo',
+  },
+  {
     value: 'Raio X',
     label: 'Raio X Exames:',
     isDisabled: true,
