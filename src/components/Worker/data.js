@@ -56,8 +56,8 @@ export const colourOptions = [
     label: 'Pediatra',
   },
   {
-    value: 'Psicóloga',
-    label: 'Psicóloga',
+    value: 'Psicologia',
+    label: 'Psicologia',
   },
   {
     value: 'Psiquiatra',
