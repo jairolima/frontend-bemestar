@@ -82,7 +82,7 @@ export default function Adm() {
       handleEdit(rowData);
     },
     onRowsDelete: 'false',
-    customToolbarSelect: () => {},
+    customToolbarSelect: () => { },
   };
 
   function handleSubmit2(data) {
@@ -101,15 +101,15 @@ export default function Adm() {
         </Modal.Header>
         <Modal.Body>
           <Whatsapp>
-            <a href={`https://api.whatsapp.com/send?phone=55${parseInt(String(currentRowData[5]).replace(/[^0-9]/g, ''), 10)}&text=Oi ${currentRowData[1]}, este é um lembrete que você tem uma consulta com ${currentRowData[2]} para ${currentRowData[3]}, *Clique neste link para confirmar:* https://agenda.policlinicabemestar.com/wz/confirm/${btoa(currentRowData[0])} Ou neste link para cancelar: https://agenda.policlinicabemestar.com/wz/cancel/${btoa(currentRowData[0])}`} rel="noopener noreferrer" target="_blank">
+            <a href={`https://api.whatsapp.com/send?phone=55${parseInt(String(currentRowData[5]).replace(/[^0-9]/g, ''), 10)}&text=Este é um lembrete, ${currentRowData[1]} você tem ${currentRowData[6]} com ${currentRowData[2]} para ${currentRowData[3]}, *Clique neste link para confirmar:* https://agenda.policlinicabemestar.com/wz/confirm/${btoa(currentRowData[0])} Ou neste link para cancelar: https://agenda.policlinicabemestar.com/wz/cancel/${btoa(currentRowData[0])}`} rel="noopener noreferrer" target="_blank">
 
-          <img
+              <img
                 width="35%"
                 height="35%"
                 src={whatsapp}
                 alt="Policlinica BemEstar"
               />
-              </a>
+            </a>
           </Whatsapp>
           <Login>
 
