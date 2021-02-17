@@ -206,6 +206,10 @@ export const flavourOptions = [
     label: 'Cervical/Pescoço',
   },
   {
+    value: 'Cervical com Doppler',
+    label: 'Cervical com Doppler',
+  },
+  {
     value: 'Doppler de carótidas e vertebrais',
     label: 'Doppler de carótidas e vertebrais',
   },
