@@ -28,6 +28,10 @@ export const colourOptions = [
     label: 'Ginecologista',
   },
   {
+    value: 'Médica de família',
+    label: 'Médica de família',
+  },
+  {
     value: 'Medicina do trabalho',
     label: 'Medicina do trabalho',
   },
