@@ -96,6 +96,10 @@ export const flavourOptions = [
     label: 'Eletrocardiograma',
   },
   {
+    value: 'Risco cirurgico',
+    label: 'Risco cirurgico',
+  },
+  {
     value: 'Dermatologia',
     label: 'Dermatologia Exames:',
     isDisabled: true,
