@@ -20,8 +20,8 @@ export const colourOptions = [
     label: 'Gastroenterologia',
   },
   {
-    value: 'Geriatra',
-    label: 'Geriatra',
+    value: 'Geriatria',
+    label: 'Geriatria',
   },
   {
     value: 'Ginecologia',
@@ -56,8 +56,8 @@ export const colourOptions = [
     label: 'Otorrino',
   },
   {
-    value: 'Pediatra',
-    label: 'Pediatra',
+    value: 'Pediatria',
+    label: 'Pediatria',
   },
   {
     value: 'Psicologia',
