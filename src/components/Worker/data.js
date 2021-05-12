@@ -1,31 +1,31 @@
 export const colourOptions = [
   {
-    value: 'Cardiologista',
-    label: 'Cardiologista',
+    value: 'Cardiologia',
+    label: 'Cardiologia',
   },
   {
     value: 'Clinico Geral',
     label: 'Clinico Geral',
   },
   {
-    value: 'Dermatologista',
-    label: 'Dermatologista',
+    value: 'Dermatologia',
+    label: 'Dermatologia',
   },
   {
-    value: 'Endocrinologista',
-    label: 'Endocrinologista',
+    value: 'Endocrinologia',
+    label: 'Endocrinologia',
   },
   {
-    value: 'Gastroenterologista',
-    label: 'Gastroenterologista',
+    value: 'Gastroenterologia',
+    label: 'Gastroenterologia',
   },
   {
     value: 'Geriatra',
     label: 'Geriatra',
   },
   {
-    value: 'Ginecologista',
-    label: 'Ginecologista',
+    value: 'Ginecologia',
+    label: 'Ginecologia',
   },
   {
     value: 'Médica de família',
@@ -44,12 +44,12 @@ export const colourOptions = [
     label: 'Nutricionista',
   },
   {
-    value: 'Nutrólogo',
-    label: 'Nutrólogo',
+    value: 'Nutrologia',
+    label: 'Nutrologia',
   },
   {
-    value: 'Ortopedista',
-    label: 'Ortopedista',
+    value: 'Ortopedia',
+    label: 'Ortopedia',
   },
   {
     value: 'Otorrino',
@@ -64,16 +64,16 @@ export const colourOptions = [
     label: 'Psicologia',
   },
   {
-    value: 'Psiquiatra',
-    label: 'Psiquiatra',
+    value: 'Psiquiatria',
+    label: 'Psiquiatria',
   },
   {
-    value: 'Reumatologista',
-    label: 'Reumatologista',
+    value: 'Reumatologia',
+    label: 'Reumatologia',
   },
   {
-    value: 'Urologista',
-    label: 'Urologista',
+    value: 'Urologia',
+    label: 'Urologia',
   },
 ];
 
