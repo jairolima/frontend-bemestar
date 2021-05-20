@@ -210,6 +210,10 @@ export const flavourOptions = [
     label: 'Ultrassom Abdomen total',
   },
   {
+    value: 'Ultrassom bolsa escrotal',
+    label: 'Ultrassom bolsa escrotal',
+  },
+  {
     value: 'Ultrassom Cervical/Pescoço',
     label: 'Ultrassom Cervical/Pescoço',
   },
