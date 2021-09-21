@@ -52,6 +52,10 @@ export const colourOptions = [
     label: 'Nutrologia',
   },
   {
+    value: 'Obstetrícia',
+    label: 'Obstetrícia',
+  },
+  {
     value: 'Ortopedia',
     label: 'Ortopedia',
   },
