@@ -44,6 +44,10 @@ export const colourOptions = [
     label: 'Medicina Integ. e Longevidade',
   },
   {
+    value: 'Neurologia',
+    label: 'Neurologia',
+  },
+  {
     value: 'Nutricionista',
     label: 'Nutricionista',
   },
