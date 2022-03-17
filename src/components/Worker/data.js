@@ -298,6 +298,10 @@ export const flavourOptions = [
     label: 'Ultrassom Prostata pelvica',
   },
   {
+    value: 'Ultrassom Tireoide',
+    label: 'Ultrassom Tireoide',
+  },
+  {
     value: 'Ultrassom Tireoide com doppler',
     label: 'Ultrassom Tireoide com doppler',
   },
