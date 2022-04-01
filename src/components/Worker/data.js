@@ -1,7 +1,15 @@
 export const colourOptions = [
   {
+    value: 'Angiologista',
+    label: 'Angiologista',
+  },
+  {
     value: 'Cardiologia',
     label: 'Cardiologia',
+  },
+  {
+    value: 'Cirurgia Geral',
+    label: 'Cirurgia Geral',
   },
   {
     value: 'Clinico Geral',
