@@ -11,6 +11,7 @@ import logo from '~/assets/logo.svg';
 const schema = Yup.object().shape({
   name: Yup.string()
     .required('O nome é obrigatório')
+    .strict(false)
     .trim('Nome não pode ter espaços no inicio ou final'),
   password_hash: Yup.string().required('O CPF é obrigatório'),
   phone: Yup.string()
