@@ -1,7 +1,4 @@
-/* eslint-disable react/no-array-index-key */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-/* eslint-disable import/no-unresolved */
-/* eslint-disable no-console */
 import React, { useState, useEffect } from 'react';
 // import { subDays, addDays } from 'date-fns';
 // import { Link } from 'react-router-dom';
@@ -55,6 +52,7 @@ function Worker() {
   const [selectedValue, setSelectedValue] = useState('Clinico Geral');
 
   const [providers, setProviders] = useState([]);
+  const [isChecked, setIsChecked] = useState(false);
 
   // const container = useRef(null);
 
@@ -265,7 +263,8 @@ function Worker() {
     const date = par1;
     const provider_id = par2;
     const filter = par3;
-    dispatch(updateProfileBooking(date, provider_id, filter));
+    const description = isChecked ? 'Retorno' : '';
+    dispatch(updateProfileBooking(date, provider_id, description, filter));
     // toast.success('Clicou');
     // history.push('/profile');
   }
@@ -1164,6 +1163,28 @@ function Worker() {
                 {new Date(currentModalTime).getHours()}:
                 {new Date(currentModalTime).getMinutes()} com {currentUserName}?
               </strong>
+
+              <div
+                style={{ marginTop: 20, display: 'flex', textAlign: 'center' }}
+              >
+                <input
+                  onChange={event => setIsChecked(event.currentTarget.checked)}
+                  checked={isChecked}
+                  type="checkbox"
+                  id="retorno"
+                  name="retorno"
+                  style={{ alignSelf: 'center' }}
+                />
+                <div
+                  onClick={() => setIsChecked(!isChecked)}
+                  onKeyDown={() => setIsChecked(!isChecked)}
+                  role="button"
+                  tabIndex="0"
+                  style={{ marginLeft: 5 }}
+                >
+                  Marcar em caso de consulta de retorno
+                </div>
+              </div>
             </>
           ) : (
             <>

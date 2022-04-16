@@ -70,11 +70,12 @@ export function* updateDoctorProfile({ payload }) {
 
 export function* updateProfileBooking({ payload }) {
   try {
-    const { date, provider_id, filter } = payload;
+    const { date, provider_id, description, filter } = payload;
 
     yield call(api.post, 'appointments', {
       date,
       provider_id,
+      description,
       filter,
     });
 
