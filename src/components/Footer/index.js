@@ -2,6 +2,10 @@ import React from 'react';
 
 import Footer from 'rc-footer';
 import 'rc-footer/assets/index.css';
+import whatsapp from '~/assets/whatsapp.svg';
+import location from '~/assets/location.svg';
+import phone from '~/assets/phone.svg';
+import email from '~/assets/email.svg';
 // import { Container } from './styles';
 
 export default function FooterBE() {
@@ -21,12 +25,7 @@ export default function FooterBE() {
           style={{ marginTop: '-40px', color: '#000' }}
           columns={[
             {
-              icon: (
-                <img
-                  src="https://image.flaticon.com/icons/svg/684/684908.svg"
-                  alt="Localização"
-                />
-              ),
+              icon: <img src={location} alt="Localização" />,
               title: 'Localização',
               items: [
                 {
@@ -53,20 +52,11 @@ export default function FooterBE() {
               ],
             },
             {
-              icon: (
-                <img
-                  src="https://image.flaticon.com/icons/svg/1041/1041916.svg"
-                  alt="contato"
-                />
-              ),
               title: 'Contato',
               items: [
                 {
                   icon: (
-                    <img
-                      src="https://image.flaticon.com/icons/svg/785/785767.svg"
-                      alt="whatsapp Policlínica Bem Estar"
-                    />
+                    <img src={whatsapp} alt="whatsapp Policlínica Bem Estar" />
                   ),
                   title: '(83) 986180305',
                   url: 'https://wa.me/5583986180305',
@@ -76,7 +66,7 @@ export default function FooterBE() {
                 {
                   icon: (
                     <img
-                      src="https://image.flaticon.com/icons/svg/785/785768.svg"
+                      src={phone}
                       alt="telefone fixo Policlínica Bem Estar"
                     />
                   ),
@@ -86,12 +76,7 @@ export default function FooterBE() {
                   openExternal: false,
                 },
                 {
-                  icon: (
-                    <img
-                      src="https://image.flaticon.com/icons/svg/2991/2991144.svg"
-                      alt="Email Policlínica Bem Estar"
-                    />
-                  ),
+                  icon: <img src={email} alt="Email Policlínica Bem Estar" />,
                   title: 'atendimento@policlinicabemestar.com',
                   url: 'mailto:atendimento@policlinicabemestar.com',
                   description: 'Email',

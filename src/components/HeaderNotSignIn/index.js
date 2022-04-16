@@ -243,7 +243,8 @@ export default function HeaderNotSignIn() {
                     'Gordita, -apple-system, system-ui, "Segoe UI", Roboto, sans-serif',
                 }}
               >
-                <span>/</span> Atendimento em horário comercial via chat
+                <span>/</span> Atendimento em horário comercial via whatsapp
+                <span style={{ color: '#cdcdcd' }}> ”</span>
               </i>
             </Navbar.Text>
           </Nav>

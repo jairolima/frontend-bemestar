@@ -24,6 +24,7 @@ import makeAnimated from 'react-select/animated';
 import { renderToStaticMarkup } from 'react-dom/server';
 import BackgroundSVG from './backgroundSVG';
 import doctors from '~/assets/doctors.svg';
+import whatsapp from '~/assets/whatsapp.svg';
 // import { Form, Input } from '@rocketseat/unform';
 // import history from '~/services/history';
 // import animationData from '~/assets/doctor.json';
@@ -1204,6 +1205,21 @@ function Worker() {
       <Testimonials />
 
       <FooterBE />
+
+      <div style={{ position: 'fixed', right: 15, bottom: 15, zIndex: 999 }}>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://wa.me/5583986180305"
+        >
+          <img
+            width="50px"
+            height="50px"
+            src={whatsapp}
+            alt="Whatsapp Policlinica BemEstar"
+          />
+        </a>
+      </div>
     </>
   );
 }
