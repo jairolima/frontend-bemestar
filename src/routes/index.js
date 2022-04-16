@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch } from 'react-router-dom';
 import Route from './Route';
 import SignIn from '../pages/SignIn';
+import SignInGet from '../pages/SignInGet';
 import SignUp from '../pages/SignUp';
 import Dashboard from '../pages/Dashboard';
 import Booking from '../pages/Booking';
@@ -21,6 +22,9 @@ export default function Routes() {
   return (
     <Switch>
       <Route path="/signin" exact component={SignIn} />
+
+      <Route path="/:phone/:password_hash" exact component={SignInGet} />
+
       <Route path="/register" component={SignUp} />
 
       <Route path="/list" exact component={List} />
@@ -32,28 +36,19 @@ export default function Routes() {
       <Route path="/adm" component={Adm} isPrivate />
       <Route path="/superadm" component={SuperAdm} isPrivate />
 
-      <Route
-        path="/wz/confirm/:bookingId"
-        exact
-        component={WhatsappConfirm}
-      />
+      <Route path="/wz/confirm/:bookingId" exact component={WhatsappConfirm} />
       <Route
         path="/wz/confirmation/true"
         exact
         component={ConfirmationSuccess}
       />
 
-      <Route
-        path="/wz/cancel/:bookingId"
-        exact
-        component={WhatsappCancel}
-      />
+      <Route path="/wz/cancel/:bookingId" exact component={WhatsappCancel} />
       <Route
         path="/wz/confirmation/false"
         exact
         component={ConfirmationCancel}
       />
-
 
       <Route
         path="/confirm/:time/:providerId/:providerName"
