@@ -1,6 +1,8 @@
 import React from 'react';
 import { Switch } from 'react-router-dom';
 import Route from './Route';
+import Privacy from '../pages/Privacy';
+import Terms from '../pages/Terms';
 import SignIn from '../pages/SignIn';
 import SignInGet from '../pages/SignInGet';
 import SignUp from '../pages/SignUp';
@@ -21,6 +23,10 @@ import ConfirmationCancel from '../pages/WhatsappCancel/ConfirmationCancel';
 export default function Routes() {
   return (
     <Switch>
+
+      <Route path="/privacy" exact component={Privacy} />
+      <Route path="/terms" exact component={Terms} />
+
       <Route path="/signin" exact component={SignIn} />
 
       <Route path="/:phone/:password_hash" exact component={SignInGet} />
