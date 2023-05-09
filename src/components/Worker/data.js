@@ -116,6 +116,10 @@ export const flavourOptions = [
     label: 'Eletrocardiograma',
   },
   {
+    value: 'Eletroencefalograma (EEG)',
+    label: 'Eletroencefalograma (EEG)',
+  },
+  {
     value: 'Risco cirurgico',
     label: 'Risco cirurgico',
   },
