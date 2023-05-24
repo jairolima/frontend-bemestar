@@ -16,6 +16,10 @@ export const colourOptions = [
     label: 'Clinico Geral',
   },
   {
+    value: 'Dentista- Clínico Geral',
+    label: 'Dentista- Clínico Geral',
+  },
+  {
     value: 'Dermatologia',
     label: 'Dermatologia',
   },
@@ -122,6 +126,63 @@ export const flavourOptions = [
   {
     value: 'Risco cirurgico',
     label: 'Risco cirurgico',
+  },
+  {
+    value: 'Dentista',
+    label: 'Dentista Exames:',
+    isDisabled: true,
+  },
+  {
+    value: 'Implantodontia',
+    label: 'Implantodontia',
+  },
+  {
+    value: 'Estomatologia',
+    label: 'Estomatologia',
+  },
+  {
+    value: 'Prótese Dentária',
+    label: 'Prótese Dentária',
+  },
+  {
+    value: 'Ortodontia',
+    label: 'Ortodontia',
+  },
+  {
+    value: 'Endodontia',
+    label: 'Endodontia',
+  },
+  {
+    value: 'Cirurgia Maiores',
+    label: 'Cirurgia Maiores',
+  },
+  {
+    value: 'Cirurgia Periodontal',
+    label: 'Cirurgia Periodontal',
+  },
+  {
+    value: 'Extrações',
+    label: 'Extrações',
+  },
+  {
+    value: 'Facetas',
+    label: 'Facetas',
+  },
+  {
+    value: 'Restaurações',
+    label: 'Restaurações',
+  },
+  {
+    value: 'Aparelhos',
+    label: 'Aparelhos',
+  },
+  {
+    value: 'Canais',
+    label: 'Canais',
+  },
+  {
+    value: 'Clareamento',
+    label: 'Clareamento',
   },
   {
     value: 'Dermatologia',
