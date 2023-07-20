@@ -92,6 +92,10 @@ export const colourOptions = [
     label: 'Psiquiatria',
   },
   {
+    value: 'Terapia Psiquiátrica',
+    label: 'Terapia Psiquiátrica',
+  },
+  {
     value: 'Reumatologia',
     label: 'Reumatologia',
   },
